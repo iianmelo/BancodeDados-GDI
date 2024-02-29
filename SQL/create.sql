@@ -1,3 +1,5 @@
---Teste
--- teste 2
--- teste ian
+CREATE TABLE FEDERACAO (
+    NOME VARCHAR(30),
+    ID_FED INT,
+    CONSTRAINT PK_FEDERACAO PRIMARY KEY (ID_FED)
+);
