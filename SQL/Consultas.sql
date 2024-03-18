@@ -1,3 +1,9 @@
+-- OUTER JOIN
+-- Nome das Empresas que não patrocinam competições
+SELECT E.NOME
+FROM EMPRESA E LEFT OUTER JOIN PAT_CLUBE PC 
+ON (E.CNPJ = PC.CNPJ) 
+
 -- SUBCONSULTA DO TIPO TABELA
 -- NOME DE EMPRESAS QUE TEM PARTICIPAÇÃO EM CLUBES
 SELECT NOME
@@ -8,7 +14,9 @@ WHERE CNPJ IN (SELECT CNPJ
 --INNER JOIN:
 -- Nome das Empresas que patrocinam clubes e seu respectivo clube patrocinado:
 SELECT E.NOME, C.NOME
-FROM CLUBE C INNER JOIN PAT_CLUBE PC ON (C.CODIGO = PC.CODIGO) INNER JOIN EMPRESA E ON (PC.CNPJ = E.CNPJ);
+FROM CLUBE C INNER JOIN PAT_CLUBE PC 
+ON (C.CODIGO = PC.CODIGO) INNER JOIN EMPRESA E 
+ON (PC.CNPJ = E.CNPJ);
 
 --SUBCONSULTA DO TIPO ESCALAR
 -- Codigo dos clubes que a empresa de nome 'Crefisa' patrocina:
@@ -23,8 +31,8 @@ WHERE PC.CNPJ = (SELECT E.CNPJ
 SELECT F.NOME
 FROM FUNCIONARIO F
 WHERE (TO_CHAR(F.DT_NASCIMENTO, 'YYYY'), F.NACIONALIDADE) = (SELECT TO_CHAR(F2.DT_NASCIMENTO, 'YYYY'), F2.NACIONALIDADE
-                                                  FROM FUNCIONARIO F2
-                                                  WHERE F2.ID_FUNC = '001');
+                                                             FROM FUNCIONARIO F2
+                                                             WHERE F2.ID_FUNC = '001');
 
 --ANTIJOIN 
 -- Projetar as ids das federações que não tem presidente
@@ -41,13 +49,13 @@ SELECT F.NOME
 FROM FUNCIONARIO F
 WHERE EXISTS
             (SELECT *
-             FROM JOGO_PARTICIPA JP
-             WHERE JP.ID_FUNC = F.ID_FUNC
-             );
+            FROM JOGO_PARTICIPA JP
+            WHERE JP.ID_FUNC = F.ID_FUNC);
   
 --GROUP BY/HAVING
 -- Projetar as médias dos salários dos jogadores por clube
 SELECT L.COD, AVG(F.SALARIO) AS MEDIA_SALARIO
-FROM LIGADO L INNER JOIN FUNCIONARIO F ON (L.ID_FUNC = F.ID_FUNC)
+FROM LIGADO L INNER JOIN FUNCIONARIO F 
+ON (L.ID_FUNC = F.ID_FUNC)
 GROUP BY L.COD
 HAVING L.FUNCAO = 'JOGADOR';
