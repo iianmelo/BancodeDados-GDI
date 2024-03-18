@@ -22,3 +22,7 @@ Uma empresa pode patrocinar várias competições a partir de uma mesma data de 
 Uma competição tem vários jogos. Um jogo vale para uma única competição.
 
 Um presidente de federação é identificado pelo seu ID e contém informações a respeito de seu nome. Um presidente precisa presidir uma federação. Uma federação tem apenas um presidente.
+
+
+![image](https://github.com/iianmelo/BancodeDados-GDI/assets/114230401/7843b651-4d3d-4411-944a-f801ebf6462e)
+
