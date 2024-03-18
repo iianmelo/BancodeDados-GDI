@@ -27,7 +27,7 @@ WHERE PC.CNPJ = (SELECT E.CNPJ
                  FROM EMPRESA E
                  WHERE E.NOME = 'CREFISA');
 
---SUBCONSULTA DO TIPO LINHA
+--SUBCONSULTA DO TIPO LINHA (ok)
 -- Projetar o nome dos funcionários que nasceram na mesmo ano e tem a mesma nacionalidade do funcionário de id '001'
 SELECT F.NOME
 FROM FUNCIONARIO F
@@ -35,7 +35,7 @@ WHERE (TO_CHAR(F.DT_NASCIMENTO, 'YYYY'), F.NACIONALIDADE) = (SELECT TO_CHAR(F2.D
                                                              FROM FUNCIONARIO F2
                                                              WHERE F2.ID_FUNC = '001');
 
---ANTIJOIN 
+--ANTIJOIN (ok)
 -- Projetar as ids das federações que não tem presidente
 SELECT F.ID_FED
 FROM FEDERACAO F
@@ -44,7 +44,7 @@ WHERE NOT EXISTS
              FROM PRESIDENTE_DA_FEDERACAO PF
              WHERE PF.ID_FED = F.ID_FED);
 
--- SEMIJOIN
+-- SEMIJOIN (ok)
 -- Projetar os nomes dos funcionários que já jogaram jogos
 SELECT F.NOME
 FROM FUNCIONARIO F
