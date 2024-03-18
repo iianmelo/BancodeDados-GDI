@@ -8,9 +8,7 @@ WHERE CNPJ IN (SELECT CNPJ
 --INNER JOIN:
 -- Nome das Empresas que patrocinam clubes e seu respectivo clube patrocinado:
 SELECT E.NOME, C.NOME
-FROM CLUBE C INNER JOIN PAT_CLUBE PC 
-ON (C.CODIGO = PC.CODIGO) INNER JOIN EMPRESA E 
-ON (PC.CNPJ = E.CNPJ);
+FROM CLUBE C INNER JOIN PAT_CLUBE PC ON (C.CODIGO = PC.CODIGO) INNER JOIN EMPRESA E ON (PC.CNPJ = E.CNPJ);
 
 --SUBCONSULTA DO TIPO ESCALAR
 -- Codigo dos clubes que a empresa de nome 'Crefisa' patrocina:
@@ -28,4 +26,11 @@ WHERE (YEAR(F.DT_NASCIMENTO), F.NACIONALIDADE) = (SELECT YEAR(F2.DT_NASCIMENTO),
                                                   FROM FUNCIONARIO F2
                                                   WHERE F2.ID_FUNC = '001');
 
---
+--SEMIJOIN 
+-- Projetar as ids das federações que não tem presidente
+SELECT F.ID_FED
+FROM FEDERACAO F
+WHERE NOT EXISTS 
+            (SELECT *
+             FROM PRESIDENTE_DA_FEDERACAO PF
+             WHERE PF.ID_FED = F.ID_FED);
