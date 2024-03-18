@@ -1,3 +1,6 @@
+-- CONSULTAS --
+-------------------------------------------------------------------
+
 -- OUTER JOIN (ok)
 -- Nome das Empresas que não patrocinam competições
 SELECT E.NOME
@@ -70,3 +73,6 @@ UNION
 SELECT E.NOME
 FROM EMPRESA E INNER JOIN PAT_COMP PCOMP
 ON PCOMP.CNPJ_EMPRESA = E.CNPJ;
+
+-- GATILHOS --
+-------------------------------------------------------------------
