@@ -25,6 +25,8 @@ INSERT INTO FEDERACAO VALUES ('FIGC', 1111);
 -- Italia
 INSERT INTO FEDERACAO VALUES ('FIFA', 0000); 
 -- Mundo
+INSERT INTO FEDERACAO VALUES ('USMT', 9999); 
+-- Estados UNidos
 
 
 --Presidente da Federacao:
