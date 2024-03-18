@@ -19,13 +19,13 @@ FROM CLUBE C INNER JOIN PAT_CLUBE PC
 ON (C.CODIGO = PC.CODIGO_CLUBE) INNER JOIN EMPRESA E 
 ON (PC.CNPJ_EMPRESA = E.CNPJ);
 
---SUBCONSULTA DO TIPO ESCALAR
--- Codigo dos clubes que a empresa de nome 'Crefisa' patrocina:
-SELECT PC.COD
+--SUBCONSULTA DO TIPO ESCALAR (ok)
+-- Codigo dos clubes que a empresa de nome 'Emirates' patrocina:
+SELECT PC.CODIGO_CLUBE
 FROM PAT_CLUBE PC
-WHERE PC.CNPJ = (SELECT E.CNPJ
+WHERE PC.CNPJ_EMPRESA = (SELECT E.CNPJ
                  FROM EMPRESA E
-                 WHERE E.NOME = 'CREFISA');
+                 WHERE E.NOME = 'EMIRATES');
 
 --SUBCONSULTA DO TIPO LINHA (ok)
 -- Projetar o nome dos funcionários que nasceram na mesmo ano e tem a mesma nacionalidade do funcionário de id '001'
