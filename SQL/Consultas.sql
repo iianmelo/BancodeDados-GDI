@@ -35,6 +35,16 @@ WHERE NOT EXISTS
              FROM PRESIDENTE_DA_FEDERACAO PF
              WHERE PF.ID_FED = F.ID_FED);
 
+-- SEMIJOIN
+-- Projetar os nomes dos funcionários que já jogaram jogos
+SELECT F.NOME
+FROM FUNCIONARIO F
+WHERE EXISTS
+            (SELECT *
+             FROM JOGO_PARTICIPA JP
+             WHERE JP.ID_FUNC = F.ID_FUNC
+             );
+  
 --GROUP BY/HAVING
 -- Projetar as médias dos salários dos jogadores por clube
 SELECT L.COD, AVG(F.SALARIO) AS MEDIA_SALARIO
