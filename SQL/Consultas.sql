@@ -22,7 +22,7 @@ WHERE PC.CNPJ = (SELECT E.CNPJ
 -- Projetar o nome dos funcionários que nasceram na mesmo ano e tem a mesma nacionalidade do funcionário de id '001'
 SELECT F.NOME
 FROM FUNCIONARIO F
-WHERE (YEAR(F.DT_NASCIMENTO), F.NACIONALIDADE) = (SELECT YEAR(F2.DT_NASCIMENTO), F2.NACIONALIDADE
+WHERE (TO_CHAR(F.DT_NASCIMENTO, 'YYYY'), F.NACIONALIDADE) = (SELECT TO_CHAR(F2.DT_NASCIMENTO, 'YYYY'), F2.NACIONALIDADE
                                                   FROM FUNCIONARIO F2
                                                   WHERE F2.ID_FUNC = '001');
 
