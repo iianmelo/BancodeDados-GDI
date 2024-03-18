@@ -15,8 +15,8 @@ WHERE CNPJ IN (SELECT CNPJ
 -- Nome das Empresas que patrocinam clubes e seu respectivo clube patrocinado:
 SELECT E.NOME, C.NOME
 FROM CLUBE C INNER JOIN PAT_CLUBE PC 
-ON (C.CODIGO = PC.CODIGO) INNER JOIN EMPRESA E 
-ON (PC.CNPJ = E.CNPJ);
+ON (C.CODIGO = PC.CODIGO_CLUBE) INNER JOIN EMPRESA E 
+ON (PC.CNPJ_EMPRESA = E.CNPJ);
 
 --SUBCONSULTA DO TIPO ESCALAR
 -- Codigo dos clubes que a empresa de nome 'Crefisa' patrocina:
