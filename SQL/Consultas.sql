@@ -26,7 +26,7 @@ WHERE (TO_CHAR(F.DT_NASCIMENTO, 'YYYY'), F.NACIONALIDADE) = (SELECT TO_CHAR(F2.D
                                                   FROM FUNCIONARIO F2
                                                   WHERE F2.ID_FUNC = '001');
 
---SEMIJOIN 
+--ANTIJOIN 
 -- Projetar as ids das federações que não tem presidente
 SELECT F.ID_FED
 FROM FEDERACAO F
