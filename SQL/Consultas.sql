@@ -65,7 +65,7 @@ ON (L.CODIGO_CLUBE = C.CODIGO)
 GROUP BY C.NOME;
 
 -- CONJUNTOS (ok)
--- Selecionar todas as empresas que patrocinam um clube ou competicao
+-- Selecionar todas as empresas que já patrocinaram ou patrocinam um clube ou competicao
 SELECT E.NOME
 FROM EMPRESA E INNER JOIN PAT_CLUBE PCLUBE
 ON PCLUBE.CNPJ_EMPRESA = E.CNPJ  
