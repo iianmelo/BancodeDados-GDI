@@ -2,14 +2,14 @@
 -------------------------------------------------------------------
 
 -- OUTER JOIN (ok)
--- Nome das Empresas que não patrocinam competições
+-- Nome das Empresas que nunca patrocinaram competições
 SELECT E.NOME
 FROM EMPRESA E LEFT OUTER JOIN PAT_COMP PC 
 ON (E.CNPJ = PC.CNPJ_EMPRESA)
 WHERE PC.CNPJ_EMPRESA IS NULL;
 
 -- SUBCONSULTA DO TIPO TABELA (ok)
--- NOME DE EMPRESAS QUE PATROCINAM CLUBES
+-- NOME DE EMPRESAS QUE PATROCINAM OU JA PATROCINARAM CLUBES
 SELECT NOME
 FROM EMPRESA 
 WHERE CNPJ IN (SELECT CNPJ_EMPRESA
