@@ -116,4 +116,9 @@ BEGIN
     END IF;
 END;
 /
+-- Uso do procedimento
+BEGIN 
+	AtualizarNomeEstadio(0019, 'NEOQUIMICA ARENA'); 
+END; 
+/
 
