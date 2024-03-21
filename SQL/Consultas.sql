@@ -124,3 +124,47 @@ BEGIN
 END; 
 /
 
+-- Criando uma função para calcular a soma de todos os salários
+
+CREATE OR REPLACE FUNCTION CalcularSomaSalarios RETURN NUMBER  
+AS  
+    v_soma_salarios NUMBER;  
+BEGIN  
+    SELECT SUM(SALARIO)  
+    INTO v_soma_salarios  
+    FROM FUNCIONARIO;  
+  
+    RETURN v_soma_salarios;  
+END; 
+/
+
+-- Uso da função
+
+DECLARE   
+    v_soma_total_salarios NUMBER;   
+BEGIN   
+    v_soma_total_salarios := CalcularSomaSalarios;   
+    DBMS_OUTPUT.PUT_LINE('Soma total dos salários de todos os funcionários: ' || v_soma_total_salarios);   
+END; 
+/
+
+-- Criando uma função para contar quantos clubes começam com S
+CREATE OR REPLACE FUNCTION S_CLUBES RETURN NUMBER AS 
+    qtd NUMBER;
+BEGIN 
+    SELECT COUNT(*) INTO qtd
+    FROM CLUBE
+    WHERE NOME LIKE 'S%';
+
+    RETURN qtd;
+END;
+/
+
+-- Uso da função
+DECLARE 
+ qtd NUMBER; 
+BEGIN 
+    qtd := S_CLUBES; 
+    DBMS_OUTPUT.PUT_LINE('Quantidade de clubes que comecam com S: ' || qtd); 
+END; 
+/
