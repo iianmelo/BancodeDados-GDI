@@ -16,7 +16,7 @@ WHERE CNPJ IN (SELECT CNPJ_EMPRESA
                FROM PAT_CLUBE);
 
 --INNER JOIN: (ok)
--- Nome das Empresas que patrocinam clubes e seu respectivo clube patrocinado:
+-- Nome das Empresas que patrocinam ou patrocinavam clubes e seu respectivo clube patrocinado:
 SELECT E.NOME, C.NOME
 FROM CLUBE C INNER JOIN PAT_CLUBE PC 
 ON (C.CODIGO = PC.CODIGO_CLUBE) INNER JOIN EMPRESA E 
