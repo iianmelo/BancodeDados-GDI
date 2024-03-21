@@ -57,7 +57,7 @@ WHERE EXISTS
             WHERE JP.ID_FUNC = F.ID_FUNC);
   
 --GROUP BY/HAVING (ok)
--- Projetar as médias dos salários dos funcionários por clube
+-- Projetar as médias dos salários dos funcionários por clube onde as médias são maiores que 1000
 SELECT C.NOME, TRUNC(AVG(F.SALARIO),2) AS MEDIA_SALARIO
 FROM LIGADO L INNER JOIN FUNCIONARIO F 
 ON (L.ID_FUNC = F.ID_FUNC) INNER JOIN CLUBE C
