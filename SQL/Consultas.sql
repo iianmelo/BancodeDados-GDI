@@ -87,7 +87,7 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE('FUNCIONARIO NOVO:' ||:NEW.ID_FUNC || ' ' || :NEW.NOME);
     END IF;
 END;
-
+/
 -- printando o novo nome do funcionário
 CREATE OR REPLACE TRIGGER MudancaDeNome 
 BEFORE UPDATE OF NOME ON FUNCIONARIO   
@@ -96,6 +96,19 @@ BEGIN
     IF(:NEW.NOME<>:OLD.NOME)THEN   
         DBMS_OUTPUT.PUT_LINE('NOVO NOME: ' ||:NEW.NOME);   
     END IF;   
+END;  
+/
+--Atualizando o presidente
+CREATE OR REPLACE TRIGGER MudancaDePresidente
+BEFORE UPDATE OF NOME, ID ON PRESIDENTE_DA_FEDERACAO  
+FOR EACH ROW   
+BEGIN   
+    IF(:NEW.NOME<>:OLD.NOME)THEN   
+        DBMS_OUTPUT.PUT_LINE('NOVO NOME: ' ||:NEW.NOME);   
+    END IF;
+	IF(:NEW.ID<>:OLD.ID)THEN   
+        DBMS_OUTPUT.PUT_LINE('NOVO ID: ' ||:NEW.ID);   
+    END IF;
 END;  
 /
 -- Procedimento para alterar o nome de um estádio
