@@ -97,3 +97,23 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE('NOVO NOME: ' ||:NEW.NOME);   
     END IF;   
 END;  
+
+-- Procedimento para alterar o nome de um estádio
+CREATE OR REPLACE PROCEDURE AtualizarNomeEstadio(
+    p_cod_estadio IN ESTADIO.COD_ESTADIO%TYPE,
+    p_novo_nome IN ESTADIO.NOME%TYPE
+)
+AS
+BEGIN
+    UPDATE ESTADIO
+    SET NOME = p_novo_nome
+    WHERE COD_ESTADIO = p_cod_estadio;
+
+    IF SQL%ROWCOUNT > 0 THEN
+        DBMS_OUTPUT.PUT_LINE('Nome do estádio atualizado com sucesso.');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Nenhum estádio encontrado com o código digitado.');
+    END IF;
+END;
+/
+
