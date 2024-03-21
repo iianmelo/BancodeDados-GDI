@@ -77,17 +77,6 @@ ON PCOMP.CNPJ_EMPRESA = E.CNPJ;
 
 -- GATILHOS --
 -------------------------------------------------------------------
-
--- printando o nome do novo funcionário ao ser alterado a coluna 'Id_Func' de um funcionario ja existente
-CREATE OR REPLACE TRIGGER SejaBemVindoAoClube
-BEFORE UPDATE OF ID_FUNC ON FUNCIONARIO
-FOR EACH ROW
-BEGIN
-    IF(:NEW.ID_FUNC<>:OLD.ID_FUNC)THEN
-        DBMS_OUTPUT.PUT_LINE('FUNCIONARIO NOVO:' ||:NEW.ID_FUNC || ' ' || :NEW.NOME);
-    END IF;
-END;
-/
 -- printando o novo nome do funcionário
 CREATE OR REPLACE TRIGGER MudancaDeNome 
 BEFORE UPDATE OF NOME ON FUNCIONARIO   
