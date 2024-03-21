@@ -87,3 +87,13 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE('FUNCIONARIO NOVO:' ||:NEW.ID_FUNC || ' ' || :NEW.NOME);
     END IF;
 END;
+
+-- printando o novo nome do funcionário
+CREATE OR REPLACE TRIGGER MudancaDeNome 
+BEFORE UPDATE OF NOME ON FUNCIONARIO   
+FOR EACH ROW   
+BEGIN   
+    IF(:NEW.NOME<>:OLD.NOME)THEN   
+        DBMS_OUTPUT.PUT_LINE('NOVO NOME: ' ||:NEW.NOME);   
+    END IF;   
+END;  
