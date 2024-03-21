@@ -23,7 +23,7 @@ ON (C.CODIGO = PC.CODIGO_CLUBE) INNER JOIN EMPRESA E
 ON (PC.CNPJ_EMPRESA = E.CNPJ);
 
 --SUBCONSULTA DO TIPO ESCALAR (ok)
--- Codigo dos clubes que a empresa de nome 'Emirates' patrocina:
+-- Codigo dos clubes que a empresa de nome 'Emirates' já patrrocinou ou patrocina:
 SELECT PC.CODIGO_CLUBE
 FROM PAT_CLUBE PC
 WHERE PC.CNPJ_EMPRESA = (SELECT E.CNPJ
