@@ -56,7 +56,7 @@ Estádio tem endereço composto: país, cidade, CEP e número. O texto também a
 
 ## Modelagem
 
-O conceitual abaixo lê o mini-mundo e a capa da apresentação. O mesmo nome, nos três recortes, é a mesma entidade. Os losangos são relacionamentos.
+O conceitual abaixo lê o mini-mundo. A notação é a de Chen / Elmasri-Navathe: retângulo para entidade, losango para relacionamento, elipse para atributo, cardinalidade `(mín, máx)` ao lado da entidade.
 
 ![Esquema conceitual do mini-mundo de futebol, em três recortes](docs/diagrama-conceitual.png)
 
@@ -77,7 +77,7 @@ Não há modelo objeto-relacional: o script não cria tipo, `REF`, `VARRAY` nem 
 
 ## Esquema
 
-Vinte tabelas. A seta do desenho nomeia a tabela referenciada pela chave estrangeira, para o diagrama continuar legível.
+Vinte tabelas, na notação de pata de galinha. Os tipos são os do dicionário do Oracle (`VARCHAR2`, `NUMBER`, `DATE`, `TIMESTAMP`), não o sinônimo escrito no script. Linha cheia: a chave estrangeira faz parte da primária. Linha tracejada: não faz.
 
 ![Vinte tabelas do DDL, com chaves e tabelas referenciadas](docs/diagrama-logico.png)
 
@@ -164,9 +164,11 @@ END;
 
 Os scripts foram executados no SQL\*Plus contra **Oracle AI Database 26ai Free Release 23.26.3.0.0**, imagem `gvenzl/oracle-free:23-slim-faststart`. O log da parte de consultas está em [`docs/saida-sqlplus.txt`](docs/saida-sqlplus.txt). `USER_ERRORS` ficou vazio depois da compilação.
 
-![Seis resultados de consulta na carga de exemplo](docs/resultados-consultas.png)
+As duas figuras abaixo são capturas do SQL\*Plus nessa sessão (`system@FREEPDB1`), com o texto das consultas do repositório.
 
-![Saída dos gatilhos, da procedure e das funções](docs/resultados-plsql.png)
+![SQL*Plus: junção interna, GROUP BY e semijoin](docs/resultados-consultas.png)
+
+![SQL*Plus: procedure, funções e gatilho MudancaDeNome](docs/resultados-plsql.png)
 
 Leitura curta da mesma execução:
 
@@ -202,7 +204,7 @@ docker exec -e NLS_LANG=.AL32UTF8 gdi-oracle \
 
 Um ponto e vírgula foi acrescentado depois do `HAVING` em `Consultas.sql`. Sem ele, o SQL\*Plus emendava o `SELECT` seguinte na agregação e o script parava. Foi o único ajuste nos arquivos acadêmicos. Os `INSERT`s comentados de `JOGO` continuam comentados.
 
-Para redesenhar as figuras: `docs/render_conceitual.py` e `docs/render_logico.py` escrevem SVG; `rsvg-convert` gera o PNG. `docs/gerar_figuras.py` reescreve o Mermaid e as duas imagens de resultado a partir dos números desta execução.
+Para redesenhar os diagramas: `docs/render_conceitual.py` e `docs/render_logico.py` escrevem o SVG; `rsvg-convert` gera o PNG. `docs/gerar_figuras.py` só regenera o Mermaid. As capturas de resultado não são desenhadas: são a janela do SQL\*Plus ligada ao Oracle Free.
 
 ## Estrutura do repositório
 

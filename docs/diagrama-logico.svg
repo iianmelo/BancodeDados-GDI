@@ -1,369 +1,486 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1326" height="2050" viewBox="0 0 1326 2050">
-<rect width="1326" height="2050" fill="#f6f3ec"/>
-<text x="32" y="42" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="26" font-weight="700">Esquema relacional implementado</text>
-<text x="32" y="68" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="14">20 tabelas de SQL/create.sql · PK chave primária · FK chave estrangeira · NN NOT NULL · UQ UNIQUE · a seta nomeia a tabela referenciada</text>
-<rect x="32" y="96" width="620" height="1024" rx="16" fill="#e7eef6" stroke="#d5dde6"/>
-<text x="48" y="124" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650">Instituições e competições</text>
-<rect x="46" y="142" width="592" height="96" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="46" y="142" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="46" y="158" width="592" height="14" fill="#1e3a5f"/>
-<text x="58" y="162" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">FEDERACAO</text>
-<text x="58" y="190" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="116" y="190" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME</text>
-<text x="342" y="190" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<text x="58" y="216" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
-<text x="116" y="216" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FED</text>
-<text x="342" y="216" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<rect x="46" y="252" width="592" height="122" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="46" y="252" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="46" y="268" width="592" height="14" fill="#1e3a5f"/>
-<text x="58" y="272" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">PRESIDENTE_DA_FEDERACAO</text>
-<text x="58" y="300" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="116" y="300" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME</text>
-<text x="342" y="300" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<text x="58" y="326" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
-<text x="116" y="326" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID</text>
-<text x="342" y="326" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="58" y="352" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">FK</text>
-<text x="116" y="352" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FED</text>
-<text x="342" y="352" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="626" y="352" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ FEDERACAO</text>
-<rect x="46" y="388" width="592" height="148" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="46" y="388" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="46" y="404" width="592" height="14" fill="#1e3a5f"/>
-<text x="58" y="408" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">ARBITRO</text>
-<text x="58" y="436" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="116" y="436" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME</text>
-<text x="342" y="436" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<text x="58" y="462" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
-<text x="116" y="462" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO</text>
-<text x="342" y="462" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="58" y="488" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="116" y="488" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">DT_NASCIMENTO</text>
-<text x="342" y="488" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">DATE</text>
-<text x="58" y="514" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="116" y="514" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NACIONALIDADE</text>
-<text x="342" y="514" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<rect x="46" y="550" width="592" height="96" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="46" y="550" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="46" y="566" width="592" height="14" fill="#1e3a5f"/>
-<text x="58" y="570" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">FAZ_PARTE</text>
-<text x="58" y="598" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="116" y="598" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO_ARBITRO</text>
-<text x="342" y="598" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="626" y="598" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ ARBITRO</text>
-<text x="58" y="624" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="116" y="624" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FED</text>
-<text x="342" y="624" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="626" y="624" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ FEDERACAO</text>
-<rect x="46" y="660" width="592" height="148" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="46" y="660" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="46" y="676" width="592" height="14" fill="#1e3a5f"/>
-<text x="58" y="680" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">COMPETICAO</text>
-<text x="58" y="708" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="116" y="708" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME</text>
-<text x="342" y="708" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<text x="58" y="734" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
-<text x="116" y="734" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_ARTIFICIAL</text>
-<text x="342" y="734" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="58" y="760" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="116" y="760" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FED</text>
-<text x="342" y="760" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="626" y="760" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ FEDERACAO</text>
-<text x="58" y="786" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="116" y="786" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">TEMPORADA</text>
-<text x="342" y="786" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<rect x="46" y="822" width="592" height="148" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="46" y="822" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="46" y="838" width="592" height="14" fill="#1e3a5f"/>
-<text x="58" y="842" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">GARANTE_VAGA</text>
-<text x="58" y="870" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="116" y="870" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_ARTIFICIAL_MAIOR</text>
-<text x="342" y="870" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="626" y="870" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
-<text x="58" y="896" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="116" y="896" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FED_MAIOR</text>
-<text x="342" y="896" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="626" y="896" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
-<text x="58" y="922" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="116" y="922" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_ARTIFICIAL_MENOR</text>
-<text x="342" y="922" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="626" y="922" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
-<text x="58" y="948" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="116" y="948" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FED_MENOR</text>
-<text x="342" y="948" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="626" y="948" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
-<rect x="674" y="96" width="620" height="1024" rx="16" fill="#e7f3ec" stroke="#d5dde6"/>
-<text x="690" y="124" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650">Clubes, patrocínio e troféus</text>
-<rect x="688" y="142" width="592" height="148" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="688" y="142" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="688" y="158" width="592" height="14" fill="#1e3a5f"/>
-<text x="700" y="162" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">CLUBE</text>
-<text x="700" y="190" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="190" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME</text>
-<text x="984" y="190" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<text x="700" y="216" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
-<text x="758" y="216" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO</text>
-<text x="984" y="216" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="700" y="242" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="242" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">MASCOTE</text>
-<text x="984" y="242" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<text x="700" y="268" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="268" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">SEDE</text>
-<text x="984" y="268" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<rect x="688" y="304" width="592" height="96" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="688" y="304" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="688" y="320" width="592" height="14" fill="#1e3a5f"/>
-<text x="700" y="324" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">EMPRESA</text>
-<text x="700" y="352" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">UQ</text>
-<text x="758" y="352" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME</text>
-<text x="984" y="352" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<text x="700" y="378" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
-<text x="758" y="378" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CNPJ</text>
-<text x="984" y="378" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<rect x="688" y="414" width="592" height="174" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="688" y="414" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="688" y="430" width="592" height="14" fill="#1e3a5f"/>
-<text x="700" y="434" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">PAT_CLUBE</text>
-<text x="700" y="462" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="758" y="462" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO_CLUBE</text>
-<text x="984" y="462" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="1268" y="462" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ CLUBE</text>
-<text x="700" y="488" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="758" y="488" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CNPJ_EMPRESA</text>
-<text x="984" y="488" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="1268" y="488" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ EMPRESA</text>
-<text x="700" y="514" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
-<text x="758" y="514" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">DT_CONTRATO</text>
-<text x="984" y="514" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">DATE</text>
-<text x="700" y="540" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="540" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">VALOR</text>
-<text x="984" y="540" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="700" y="566" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="566" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">DURACAO</text>
-<text x="984" y="566" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<rect x="688" y="602" width="592" height="200" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="688" y="602" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="688" y="618" width="592" height="14" fill="#1e3a5f"/>
-<text x="700" y="622" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">PAT_COMP</text>
-<text x="700" y="650" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="758" y="650" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_COMP</text>
-<text x="984" y="650" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="1268" y="650" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
-<text x="700" y="676" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="758" y="676" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FED</text>
-<text x="984" y="676" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="1268" y="676" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
-<text x="700" y="702" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="758" y="702" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CNPJ_EMPRESA</text>
-<text x="984" y="702" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="1268" y="702" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ EMPRESA</text>
-<text x="700" y="728" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
-<text x="758" y="728" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">DT_CONTRATO</text>
-<text x="984" y="728" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">DATE</text>
-<text x="700" y="754" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="754" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">VALOR</text>
-<text x="984" y="754" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="700" y="780" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="780" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">DURACAO</text>
-<text x="984" y="780" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<rect x="688" y="816" width="592" height="96" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="688" y="816" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="688" y="832" width="592" height="14" fill="#1e3a5f"/>
-<text x="700" y="836" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">TROFEU</text>
-<text x="700" y="864" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
-<text x="758" y="864" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME</text>
-<text x="984" y="864" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<text x="700" y="890" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="890" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">VALOR</text>
-<text x="984" y="890" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<rect x="688" y="926" width="592" height="174" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="688" y="926" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="688" y="942" width="592" height="14" fill="#1e3a5f"/>
-<text x="700" y="946" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">PARTICIPA</text>
-<text x="700" y="974" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="758" y="974" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO</text>
-<text x="984" y="974" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="1268" y="974" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ CLUBE</text>
-<text x="700" y="1000" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="758" y="1000" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_ARTIFICIAL</text>
-<text x="984" y="1000" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="1268" y="1000" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
-<text x="700" y="1026" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="758" y="1026" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FED</text>
-<text x="984" y="1026" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="1268" y="1026" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
-<text x="700" y="1052" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">FK</text>
-<text x="758" y="1052" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME_TROFEU</text>
-<text x="984" y="1052" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<text x="1268" y="1052" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ TROFEU</text>
-<text x="700" y="1078" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="1078" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">COLOCACAO</text>
-<text x="984" y="1078" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<rect x="32" y="1142" width="620" height="836" rx="16" fill="#f8efe6" stroke="#d5dde6"/>
-<text x="48" y="1170" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650">Pessoas e elencos</text>
-<rect x="46" y="1188" width="592" height="174" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="46" y="1188" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="46" y="1204" width="592" height="14" fill="#1e3a5f"/>
-<text x="58" y="1208" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">FUNCIONARIO</text>
-<text x="58" y="1236" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="116" y="1236" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME</text>
-<text x="342" y="1236" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<text x="58" y="1262" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
-<text x="116" y="1262" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FUNC</text>
-<text x="342" y="1262" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="58" y="1288" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="116" y="1288" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">SALARIO</text>
-<text x="342" y="1288" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="58" y="1314" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="116" y="1314" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">DT_NASCIMENTO</text>
-<text x="342" y="1314" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">DATE</text>
-<text x="58" y="1340" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="116" y="1340" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NACIONALIDADE</text>
-<text x="342" y="1340" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<rect x="46" y="1376" width="592" height="70" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="46" y="1376" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="46" y="1392" width="592" height="14" fill="#1e3a5f"/>
-<text x="58" y="1396" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">JOGADOR</text>
-<text x="58" y="1424" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="116" y="1424" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_JOGADOR</text>
-<text x="342" y="1424" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="626" y="1424" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ FUNCIONARIO</text>
-<rect x="46" y="1460" width="592" height="148" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="46" y="1460" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="46" y="1476" width="592" height="14" fill="#1e3a5f"/>
-<text x="58" y="1480" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">LIGADO</text>
-<text x="58" y="1508" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="116" y="1508" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FUNC</text>
-<text x="342" y="1508" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="626" y="1508" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ FUNCIONARIO</text>
-<text x="58" y="1534" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="116" y="1534" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO_CLUBE</text>
-<text x="342" y="1534" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="626" y="1534" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ CLUBE</text>
-<text x="58" y="1560" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
-<text x="116" y="1560" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">TEMPORADA</text>
-<text x="342" y="1560" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="58" y="1586" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
-<text x="116" y="1586" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">FUNCAO</text>
-<text x="342" y="1586" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<rect x="46" y="1622" width="592" height="174" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="46" y="1622" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="46" y="1638" width="592" height="14" fill="#1e3a5f"/>
-<text x="58" y="1642" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">JOGADOR_PARTICIPA</text>
-<text x="58" y="1670" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="116" y="1670" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FUNC</text>
-<text x="342" y="1670" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="626" y="1670" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ FUNCIONARIO</text>
-<text x="58" y="1696" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="116" y="1696" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO_JOGO</text>
-<text x="342" y="1696" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="626" y="1696" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ JOGO</text>
-<text x="58" y="1722" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="116" y="1722" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">N_GOLS</text>
-<text x="342" y="1722" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="58" y="1748" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="116" y="1748" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">N_ASSIST</text>
-<text x="342" y="1748" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="58" y="1774" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="116" y="1774" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">POSICAO</text>
-<text x="342" y="1774" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<rect x="46" y="1810" width="592" height="148" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="46" y="1810" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="46" y="1826" width="592" height="14" fill="#1e3a5f"/>
-<text x="58" y="1830" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">CARTOES</text>
-<text x="58" y="1858" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="116" y="1858" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FUNC</text>
-<text x="342" y="1858" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="626" y="1858" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ JOGADOR_PARTICIPA</text>
-<text x="58" y="1884" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="116" y="1884" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">COD_JOGO</text>
-<text x="342" y="1884" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="626" y="1884" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ JOGADOR_PARTICIPA</text>
-<text x="58" y="1910" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
-<text x="116" y="1910" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">COR</text>
-<text x="342" y="1910" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(50)</text>
-<text x="58" y="1936" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
-<text x="116" y="1936" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">MINUTO</text>
-<text x="342" y="1936" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">TIMESTAMP</text>
-<rect x="674" y="1142" width="620" height="836" rx="16" fill="#eef0f6" stroke="#d5dde6"/>
-<text x="690" y="1170" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650">Partidas e estádios</text>
-<rect x="688" y="1188" width="592" height="226" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="688" y="1188" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="688" y="1204" width="592" height="14" fill="#1e3a5f"/>
-<text x="700" y="1208" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">ESTADIO</text>
-<text x="700" y="1236" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="1236" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME</text>
-<text x="984" y="1236" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<text x="700" y="1262" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
-<text x="758" y="1262" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">COD_ESTADIO</text>
-<text x="984" y="1262" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="700" y="1288" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="1288" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CAPACIDADE</text>
-<text x="984" y="1288" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="700" y="1314" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="1314" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">END_PAIS</text>
-<text x="984" y="1314" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<text x="700" y="1340" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="1340" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">END_CIDADE</text>
-<text x="984" y="1340" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<text x="700" y="1366" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="1366" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">END_CEP</text>
-<text x="984" y="1366" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="700" y="1392" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="1392" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">END_NUMERO</text>
-<text x="984" y="1392" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<rect x="688" y="1428" width="592" height="226" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="688" y="1428" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="688" y="1444" width="592" height="14" fill="#1e3a5f"/>
-<text x="700" y="1448" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">JOGO</text>
-<text x="700" y="1476" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
-<text x="758" y="1476" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO</text>
-<text x="984" y="1476" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="700" y="1502" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="1502" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">DATA_</text>
-<text x="984" y="1502" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">DATE</text>
-<text x="700" y="1528" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="1528" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">FASE</text>
-<text x="984" y="1528" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<text x="700" y="1554" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">FK</text>
-<text x="758" y="1554" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_ARTIFICIAL</text>
-<text x="984" y="1554" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="1268" y="1554" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
-<text x="700" y="1580" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">FK</text>
-<text x="758" y="1580" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FED</text>
-<text x="984" y="1580" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="1268" y="1580" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
-<text x="700" y="1606" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">FK NN</text>
-<text x="758" y="1606" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO_VISITANTE</text>
-<text x="984" y="1606" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="1268" y="1606" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ CLUBE</text>
-<text x="700" y="1632" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">FK NN</text>
-<text x="758" y="1632" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO_MANDANTE</text>
-<text x="984" y="1632" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="1268" y="1632" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ CLUBE</text>
-<rect x="688" y="1668" width="592" height="174" rx="8" fill="#ffffff" stroke="#c5ced6"/>
-<rect x="688" y="1668" width="592" height="30" rx="8" fill="#1e3a5f"/>
-<rect x="688" y="1684" width="592" height="14" fill="#1e3a5f"/>
-<text x="700" y="1688" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">TEM</text>
-<text x="700" y="1716" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="758" y="1716" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">COD_ARBITRO</text>
-<text x="984" y="1716" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="1268" y="1716" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ ARBITRO</text>
-<text x="700" y="1742" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
-<text x="758" y="1742" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">COD_JOGO</text>
-<text x="984" y="1742" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="1268" y="1742" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ JOGO</text>
-<text x="700" y="1768" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="1768" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">FUNCAO_ARBITRO</text>
-<text x="984" y="1768" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<text x="700" y="1794" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
-<text x="758" y="1794" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">PLACAR</text>
-<text x="984" y="1794" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
-<text x="700" y="1820" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">FK NN</text>
-<text x="758" y="1820" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">COD_ESTADIO</text>
-<text x="984" y="1820" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
-<text x="1268" y="1820" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ ESTADIO</text>
-<text x="32" y="2010" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="13">JOGADOR_PARTICIPA referencia FUNCIONARIO, não JOGADOR. CARTOES referencia o par (ID_FUNC, COD_JOGO) de JOGADOR_PARTICIPA.</text>
-<text x="32" y="2030" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="13">CODIGO_MANDANTE, CODIGO_VISITANTE e COD_ESTADIO são NOT NULL. NOME de EMPRESA é UNIQUE. ID_FED do presidente não é NOT NULL nem UNIQUE no DDL.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1537" height="898" viewBox="0 0 1537 898">
+<rect width="1537" height="898" fill="#ffffff"/>
+<text x="28" y="28" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Esquema relacional — notação IE (pata de galinha)</text>
+<path d="M 356 223 L 387.0 223 L 387.0 92 L 356 92" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="368" y1="223" x2="356" y2="217" stroke="#000" stroke-width="1"/>
+<line x1="368" y1="223" x2="356" y2="223" stroke="#000" stroke-width="1"/>
+<line x1="368" y1="223" x2="356" y2="229" stroke="#000" stroke-width="1"/>
+<circle cx="376" cy="223" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="364" y1="85" x2="364" y2="99" stroke="#000" stroke-width="1.2"/>
+<circle cx="372" cy="92" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<path d="M 356 553 L 392.0 553 L 392.0 92 L 356 92" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="368" y1="553" x2="356" y2="547" stroke="#000" stroke-width="1"/>
+<line x1="368" y1="553" x2="356" y2="553" stroke="#000" stroke-width="1"/>
+<line x1="368" y1="553" x2="356" y2="559" stroke="#000" stroke-width="1"/>
+<circle cx="376" cy="553" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="364" y1="85" x2="364" y2="99" stroke="#000" stroke-width="1.2"/>
+<line x1="369" y1="85" x2="369" y2="99" stroke="#000" stroke-width="1.2"/>
+<path d="M 356 443 L 397.0 443 L 397.0 92 L 356 92" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="368" y1="443" x2="356" y2="437" stroke="#000" stroke-width="1"/>
+<line x1="368" y1="443" x2="356" y2="443" stroke="#000" stroke-width="1"/>
+<line x1="368" y1="443" x2="356" y2="449" stroke="#000" stroke-width="1"/>
+<circle cx="376" cy="443" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="364" y1="85" x2="364" y2="99" stroke="#000" stroke-width="1.2"/>
+<line x1="369" y1="85" x2="369" y2="99" stroke="#000" stroke-width="1.2"/>
+<path d="M 356 425 L 402.0 425 L 402.0 294 L 356 294" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="368" y1="425" x2="356" y2="419" stroke="#000" stroke-width="1"/>
+<line x1="368" y1="425" x2="356" y2="425" stroke="#000" stroke-width="1"/>
+<line x1="368" y1="425" x2="356" y2="431" stroke="#000" stroke-width="1"/>
+<circle cx="376" cy="425" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="364" y1="287" x2="364" y2="301" stroke="#000" stroke-width="1.2"/>
+<line x1="369" y1="287" x2="369" y2="301" stroke="#000" stroke-width="1.2"/>
+<path d="M 356 663 L 407.0 663 L 407.0 514 L 356 514" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="368" y1="663" x2="356" y2="657" stroke="#000" stroke-width="1"/>
+<line x1="368" y1="663" x2="356" y2="663" stroke="#000" stroke-width="1"/>
+<line x1="368" y1="663" x2="356" y2="669" stroke="#000" stroke-width="1"/>
+<circle cx="376" cy="663" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="364" y1="507" x2="364" y2="521" stroke="#000" stroke-width="1.2"/>
+<line x1="369" y1="507" x2="369" y2="521" stroke="#000" stroke-width="1.2"/>
+<text x="374" y="657" text-anchor="start" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">maior</text>
+<path d="M 356 699 L 412.0 699 L 412.0 514 L 356 514" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="368" y1="699" x2="356" y2="693" stroke="#000" stroke-width="1"/>
+<line x1="368" y1="699" x2="356" y2="699" stroke="#000" stroke-width="1"/>
+<line x1="368" y1="699" x2="356" y2="705" stroke="#000" stroke-width="1"/>
+<circle cx="376" cy="699" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="364" y1="507" x2="364" y2="521" stroke="#000" stroke-width="1.2"/>
+<line x1="369" y1="507" x2="369" y2="521" stroke="#000" stroke-width="1.2"/>
+<text x="374" y="693" text-anchor="start" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">menor</text>
+<path d="M 426 479 L 417.0 479 L 417.0 514 L 356 514" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="414" y1="479" x2="426" y2="473" stroke="#000" stroke-width="1"/>
+<line x1="414" y1="479" x2="426" y2="479" stroke="#000" stroke-width="1"/>
+<line x1="414" y1="479" x2="426" y2="485" stroke="#000" stroke-width="1"/>
+<circle cx="406" cy="479" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="364" y1="507" x2="364" y2="521" stroke="#000" stroke-width="1.2"/>
+<line x1="369" y1="507" x2="369" y2="521" stroke="#000" stroke-width="1.2"/>
+<path d="M 726 497 L 757.0 497 L 757.0 92 L 726 92" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="738" y1="497" x2="726" y2="491" stroke="#000" stroke-width="1"/>
+<line x1="738" y1="497" x2="726" y2="497" stroke="#000" stroke-width="1"/>
+<line x1="738" y1="497" x2="726" y2="503" stroke="#000" stroke-width="1"/>
+<circle cx="746" cy="497" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="734" y1="85" x2="734" y2="99" stroke="#000" stroke-width="1.2"/>
+<line x1="739" y1="85" x2="739" y2="99" stroke="#000" stroke-width="1.2"/>
+<path d="M 726 333 L 762.0 333 L 762.0 92 L 726 92" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="738" y1="333" x2="726" y2="327" stroke="#000" stroke-width="1"/>
+<line x1="738" y1="333" x2="726" y2="333" stroke="#000" stroke-width="1"/>
+<line x1="738" y1="333" x2="726" y2="339" stroke="#000" stroke-width="1"/>
+<circle cx="746" cy="333" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="734" y1="85" x2="734" y2="99" stroke="#000" stroke-width="1.2"/>
+<line x1="739" y1="85" x2="739" y2="99" stroke="#000" stroke-width="1.2"/>
+<path d="M 726 315 L 767.0 315 L 767.0 184 L 726 184" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="738" y1="315" x2="726" y2="309" stroke="#000" stroke-width="1"/>
+<line x1="738" y1="315" x2="726" y2="315" stroke="#000" stroke-width="1"/>
+<line x1="738" y1="315" x2="726" y2="321" stroke="#000" stroke-width="1"/>
+<circle cx="746" cy="315" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="734" y1="177" x2="734" y2="191" stroke="#000" stroke-width="1.2"/>
+<line x1="739" y1="177" x2="739" y2="191" stroke="#000" stroke-width="1.2"/>
+<path d="M 726 717 L 772.0 717 L 772.0 184 L 726 184" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="738" y1="717" x2="726" y2="711" stroke="#000" stroke-width="1"/>
+<line x1="738" y1="717" x2="726" y2="717" stroke="#000" stroke-width="1"/>
+<line x1="738" y1="717" x2="726" y2="723" stroke="#000" stroke-width="1"/>
+<circle cx="746" cy="717" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="734" y1="177" x2="734" y2="191" stroke="#000" stroke-width="1.2"/>
+<line x1="739" y1="177" x2="739" y2="191" stroke="#000" stroke-width="1.2"/>
+<path d="M 426 753 L 422.0 753 L 422.0 514 L 356 514" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="414" y1="753" x2="426" y2="747" stroke="#000" stroke-width="1"/>
+<line x1="414" y1="753" x2="426" y2="753" stroke="#000" stroke-width="1"/>
+<line x1="414" y1="753" x2="426" y2="759" stroke="#000" stroke-width="1"/>
+<circle cx="406" cy="753" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="364" y1="507" x2="364" y2="521" stroke="#000" stroke-width="1.2"/>
+<line x1="369" y1="507" x2="369" y2="521" stroke="#000" stroke-width="1.2"/>
+<path d="M 726 771 L 777.0 771 L 777.0 622 L 726 622" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="738" y1="771" x2="726" y2="765" stroke="#000" stroke-width="1"/>
+<line x1="738" y1="771" x2="726" y2="771" stroke="#000" stroke-width="1"/>
+<line x1="738" y1="771" x2="726" y2="777" stroke="#000" stroke-width="1"/>
+<circle cx="746" cy="771" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="734" y1="615" x2="734" y2="629" stroke="#000" stroke-width="1.2"/>
+<circle cx="742" cy="622" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<path d="M 1096 315 L 1127.0 315 L 1127.0 92 L 1096 92" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="1108" y1="315" x2="1096" y2="309" stroke="#000" stroke-width="1"/>
+<line x1="1108" y1="315" x2="1096" y2="315" stroke="#000" stroke-width="1"/>
+<line x1="1108" y1="315" x2="1096" y2="321" stroke="#000" stroke-width="1"/>
+<circle cx="1116" cy="315" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="1104" y1="85" x2="1104" y2="99" stroke="#000" stroke-width="1.2"/>
+<line x1="1109" y1="85" x2="1109" y2="99" stroke="#000" stroke-width="1.2"/>
+<path d="M 796 333 L 782.0 333 L 782.0 184 L 726 184" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="784" y1="333" x2="796" y2="327" stroke="#000" stroke-width="1"/>
+<line x1="784" y1="333" x2="796" y2="333" stroke="#000" stroke-width="1"/>
+<line x1="784" y1="333" x2="796" y2="339" stroke="#000" stroke-width="1"/>
+<circle cx="776" cy="333" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="734" y1="177" x2="734" y2="191" stroke="#000" stroke-width="1.2"/>
+<line x1="739" y1="177" x2="739" y2="191" stroke="#000" stroke-width="1.2"/>
+<path d="M 1096 241 L 1132.0 241 L 1132.0 92 L 1096 92" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="1104" y1="234" x2="1104" y2="248" stroke="#000" stroke-width="1.2"/>
+<circle cx="1112" cy="241" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="1104" y1="85" x2="1104" y2="99" stroke="#000" stroke-width="1.2"/>
+<line x1="1109" y1="85" x2="1109" y2="99" stroke="#000" stroke-width="1.2"/>
+<text x="1114" y="235" text-anchor="start" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">1:1</text>
+<path d="M 1096 443 L 1137.0 443 L 1137.0 92 L 1096 92" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="1108" y1="443" x2="1096" y2="437" stroke="#000" stroke-width="1"/>
+<line x1="1108" y1="443" x2="1096" y2="443" stroke="#000" stroke-width="1"/>
+<line x1="1108" y1="443" x2="1096" y2="449" stroke="#000" stroke-width="1"/>
+<circle cx="1116" cy="443" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="1104" y1="85" x2="1104" y2="99" stroke="#000" stroke-width="1.2"/>
+<line x1="1109" y1="85" x2="1109" y2="99" stroke="#000" stroke-width="1.2"/>
+<path d="M 1096 461 L 1142.0 461 L 1142.0 274 L 1166 274" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="1108" y1="461" x2="1096" y2="455" stroke="#000" stroke-width="1"/>
+<line x1="1108" y1="461" x2="1096" y2="461" stroke="#000" stroke-width="1"/>
+<line x1="1108" y1="461" x2="1096" y2="467" stroke="#000" stroke-width="1"/>
+<circle cx="1116" cy="461" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="1158" y1="267" x2="1158" y2="281" stroke="#000" stroke-width="1.2"/>
+<line x1="1153" y1="267" x2="1153" y2="281" stroke="#000" stroke-width="1.2"/>
+<path d="M 1096 589 L 1147.0 589 L 1147.0 440 L 1096 440" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="1108" y1="589" x2="1096" y2="583" stroke="#000" stroke-width="1"/>
+<line x1="1108" y1="589" x2="1096" y2="589" stroke="#000" stroke-width="1"/>
+<line x1="1108" y1="589" x2="1096" y2="595" stroke="#000" stroke-width="1"/>
+<circle cx="1116" cy="589" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="1104" y1="433" x2="1104" y2="447" stroke="#000" stroke-width="1.2"/>
+<line x1="1109" y1="433" x2="1109" y2="447" stroke="#000" stroke-width="1.2"/>
+<path d="M 1166 349 L 1152.0 349 L 1152.0 848 L 412.0 848 L 412.0 514 L 356 514" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="1154" y1="349" x2="1166" y2="343" stroke="#000" stroke-width="1"/>
+<line x1="1154" y1="349" x2="1166" y2="349" stroke="#000" stroke-width="1"/>
+<line x1="1154" y1="349" x2="1166" y2="355" stroke="#000" stroke-width="1"/>
+<circle cx="1146" cy="349" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="364" y1="507" x2="364" y2="521" stroke="#000" stroke-width="1.2"/>
+<circle cx="372" cy="514" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<path d="M 1166 385 L 1157.0 385 L 1157.0 830 L 787.0 830 L 787.0 184 L 726 184" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="1154" y1="385" x2="1166" y2="379" stroke="#000" stroke-width="1"/>
+<line x1="1154" y1="385" x2="1166" y2="385" stroke="#000" stroke-width="1"/>
+<line x1="1154" y1="385" x2="1166" y2="391" stroke="#000" stroke-width="1"/>
+<circle cx="1146" cy="385" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="734" y1="177" x2="734" y2="191" stroke="#000" stroke-width="1.2"/>
+<line x1="739" y1="177" x2="739" y2="191" stroke="#000" stroke-width="1.2"/>
+<text x="1148" y="379" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">mandante</text>
+<path d="M 1166 367 L 1162.0 367 L 1162.0 836 L 792.0 836 L 792.0 184 L 726 184" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="1154" y1="367" x2="1166" y2="361" stroke="#000" stroke-width="1"/>
+<line x1="1154" y1="367" x2="1166" y2="367" stroke="#000" stroke-width="1"/>
+<line x1="1154" y1="367" x2="1166" y2="373" stroke="#000" stroke-width="1"/>
+<circle cx="1146" cy="367" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="734" y1="177" x2="734" y2="191" stroke="#000" stroke-width="1.2"/>
+<line x1="739" y1="177" x2="739" y2="191" stroke="#000" stroke-width="1.2"/>
+<text x="1148" y="361" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">visitante</text>
+<path d="M 1466 477 L 1497.0 477 L 1497.0 274 L 1466 274" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="1478" y1="477" x2="1466" y2="471" stroke="#000" stroke-width="1"/>
+<line x1="1478" y1="477" x2="1466" y2="477" stroke="#000" stroke-width="1"/>
+<line x1="1478" y1="477" x2="1466" y2="483" stroke="#000" stroke-width="1"/>
+<circle cx="1486" cy="477" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="1474" y1="267" x2="1474" y2="281" stroke="#000" stroke-width="1.2"/>
+<line x1="1479" y1="267" x2="1479" y2="281" stroke="#000" stroke-width="1.2"/>
+<path d="M 1166 459 L 1167.0 459 L 1167.0 848 L 427.0 848 L 427.0 294 L 356 294" fill="none" stroke="#000" stroke-width="1"/>
+<line x1="1154" y1="459" x2="1166" y2="453" stroke="#000" stroke-width="1"/>
+<line x1="1154" y1="459" x2="1166" y2="459" stroke="#000" stroke-width="1"/>
+<line x1="1154" y1="459" x2="1166" y2="465" stroke="#000" stroke-width="1"/>
+<circle cx="1146" cy="459" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="364" y1="287" x2="364" y2="301" stroke="#000" stroke-width="1.2"/>
+<line x1="369" y1="287" x2="369" y2="301" stroke="#000" stroke-width="1.2"/>
+<path d="M 1466 531 L 1502.0 531 L 1502.0 92 L 1466 92" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="1478" y1="531" x2="1466" y2="525" stroke="#000" stroke-width="1"/>
+<line x1="1478" y1="531" x2="1466" y2="531" stroke="#000" stroke-width="1"/>
+<line x1="1478" y1="531" x2="1466" y2="537" stroke="#000" stroke-width="1"/>
+<circle cx="1486" cy="531" r="4" fill="#fff" stroke="#000" stroke-width="1"/>
+<line x1="1474" y1="85" x2="1474" y2="99" stroke="#000" stroke-width="1.2"/>
+<line x1="1479" y1="85" x2="1479" y2="99" stroke="#000" stroke-width="1.2"/>
+<rect x="56" y="52" width="300" height="70" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="56" y1="76" x2="356" y2="76" stroke="#000" stroke-width="1"/>
+<text x="206.0" y="68" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">FEDERACAO</text>
+<text x="62" y="90" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="104" y="90" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">NOME</text>
+<text x="350" y="90" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<text x="62" y="108" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK</text>
+<text x="104" y="108" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">ID_FED</text>
+<text x="350" y="108" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<rect x="56" y="144" width="300" height="88" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="56" y1="168" x2="356" y2="168" stroke="#000" stroke-width="1"/>
+<text x="206.0" y="160" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">PRESIDENTE_DA_FEDERACAO</text>
+<text x="62" y="182" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="104" y="182" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">NOME</text>
+<text x="350" y="182" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<text x="62" y="200" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK</text>
+<text x="104" y="200" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">ID</text>
+<text x="350" y="200" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="62" y="218" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">FK</text>
+<text x="104" y="218" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">ID_FED</text>
+<text x="350" y="218" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<rect x="56" y="254" width="300" height="106" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="56" y1="278" x2="356" y2="278" stroke="#000" stroke-width="1"/>
+<text x="206.0" y="270" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">ARBITRO</text>
+<text x="62" y="292" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="104" y="292" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">NOME</text>
+<text x="350" y="292" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<text x="62" y="310" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK</text>
+<text x="104" y="310" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">CODIGO</text>
+<text x="350" y="310" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="62" y="328" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="104" y="328" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">DT_NASCIMENTO</text>
+<text x="350" y="328" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">DATE</text>
+<text x="62" y="346" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="104" y="346" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">NACIONALIDADE</text>
+<text x="350" y="346" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<rect x="56" y="382" width="300" height="70" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="56" y1="406" x2="356" y2="406" stroke="#000" stroke-width="1"/>
+<text x="206.0" y="398" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">FAZ_PARTE</text>
+<text x="62" y="420" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="104" y="420" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">CODIGO_ARBITRO</text>
+<text x="350" y="420" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="62" y="438" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="104" y="438" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">ID_FED</text>
+<text x="350" y="438" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<rect x="56" y="474" width="300" height="106" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="56" y1="498" x2="356" y2="498" stroke="#000" stroke-width="1"/>
+<text x="206.0" y="490" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">COMPETICAO</text>
+<text x="62" y="512" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="104" y="512" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">NOME</text>
+<text x="350" y="512" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<text x="62" y="530" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK</text>
+<text x="104" y="530" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">ID_ARTIFICIAL</text>
+<text x="350" y="530" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="62" y="548" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="104" y="548" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">ID_FED</text>
+<text x="350" y="548" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="62" y="566" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="104" y="566" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">TEMPORADA</text>
+<text x="350" y="566" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<rect x="56" y="602" width="300" height="106" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="56" y1="626" x2="356" y2="626" stroke="#000" stroke-width="1"/>
+<text x="206.0" y="618" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">GARANTE_VAGA</text>
+<text x="62" y="640" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="104" y="640" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">ID_ARTIFICIAL_MAIOR</text>
+<text x="350" y="640" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="62" y="658" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="104" y="658" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">ID_FED_MAIOR</text>
+<text x="350" y="658" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="62" y="676" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="104" y="676" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">ID_ARTIFICIAL_MENOR</text>
+<text x="350" y="676" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="62" y="694" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="104" y="694" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">ID_FED_MENOR</text>
+<text x="350" y="694" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<rect x="426" y="52" width="300" height="70" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="426" y1="76" x2="726" y2="76" stroke="#000" stroke-width="1"/>
+<text x="576.0" y="68" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">EMPRESA</text>
+<text x="432" y="90" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">UQ</text>
+<text x="474" y="90" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">NOME</text>
+<text x="720" y="90" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<text x="432" y="108" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK</text>
+<text x="474" y="108" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">CNPJ</text>
+<text x="720" y="108" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<rect x="426" y="144" width="300" height="106" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="426" y1="168" x2="726" y2="168" stroke="#000" stroke-width="1"/>
+<text x="576.0" y="160" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">CLUBE</text>
+<text x="432" y="182" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="474" y="182" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">NOME</text>
+<text x="720" y="182" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<text x="432" y="200" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK</text>
+<text x="474" y="200" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">CODIGO</text>
+<text x="720" y="200" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="432" y="218" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="474" y="218" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">MASCOTE</text>
+<text x="720" y="218" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<text x="432" y="236" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="474" y="236" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">SEDE</text>
+<text x="720" y="236" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<rect x="426" y="272" width="300" height="124" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="426" y1="296" x2="726" y2="296" stroke="#000" stroke-width="1"/>
+<text x="576.0" y="288" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">PAT_CLUBE</text>
+<text x="432" y="310" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="474" y="310" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">CODIGO_CLUBE</text>
+<text x="720" y="310" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="432" y="328" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="474" y="328" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">CNPJ_EMPRESA</text>
+<text x="720" y="328" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="432" y="346" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK</text>
+<text x="474" y="346" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">DT_CONTRATO</text>
+<text x="720" y="346" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">DATE</text>
+<text x="432" y="364" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="474" y="364" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">VALOR</text>
+<text x="720" y="364" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="432" y="382" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="474" y="382" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">DURACAO</text>
+<text x="720" y="382" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<rect x="426" y="418" width="300" height="142" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="426" y1="442" x2="726" y2="442" stroke="#000" stroke-width="1"/>
+<text x="576.0" y="434" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">PAT_COMP</text>
+<text x="432" y="456" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="474" y="456" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">ID_COMP</text>
+<text x="720" y="456" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="432" y="474" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="474" y="474" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">ID_FED</text>
+<text x="720" y="474" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="432" y="492" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="474" y="492" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">CNPJ_EMPRESA</text>
+<text x="720" y="492" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="432" y="510" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK</text>
+<text x="474" y="510" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">DT_CONTRATO</text>
+<text x="720" y="510" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">DATE</text>
+<text x="432" y="528" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="474" y="528" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">VALOR</text>
+<text x="720" y="528" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="432" y="546" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="474" y="546" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">DURACAO</text>
+<text x="720" y="546" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<rect x="426" y="582" width="300" height="70" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="426" y1="606" x2="726" y2="606" stroke="#000" stroke-width="1"/>
+<text x="576.0" y="598" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">TROFEU</text>
+<text x="432" y="620" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK</text>
+<text x="474" y="620" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">NOME</text>
+<text x="720" y="620" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<text x="432" y="638" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="474" y="638" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">VALOR</text>
+<text x="720" y="638" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<rect x="426" y="674" width="300" height="124" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="426" y1="698" x2="726" y2="698" stroke="#000" stroke-width="1"/>
+<text x="576.0" y="690" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">PARTICIPA</text>
+<text x="432" y="712" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="474" y="712" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">CODIGO</text>
+<text x="720" y="712" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="432" y="730" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="474" y="730" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">ID_ARTIFICIAL</text>
+<text x="720" y="730" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="432" y="748" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="474" y="748" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">ID_FED</text>
+<text x="720" y="748" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="432" y="766" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">FK</text>
+<text x="474" y="766" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">NOME_TROFEU</text>
+<text x="720" y="766" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<text x="432" y="784" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="474" y="784" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">COLOCACAO</text>
+<text x="720" y="784" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<rect x="796" y="52" width="300" height="124" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="796" y1="76" x2="1096" y2="76" stroke="#000" stroke-width="1"/>
+<text x="946.0" y="68" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">FUNCIONARIO</text>
+<text x="802" y="90" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="844" y="90" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">NOME</text>
+<text x="1090" y="90" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<text x="802" y="108" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK</text>
+<text x="844" y="108" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">ID_FUNC</text>
+<text x="1090" y="108" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="802" y="126" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="844" y="126" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">SALARIO</text>
+<text x="1090" y="126" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="802" y="144" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="844" y="144" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">DT_NASCIMENTO</text>
+<text x="1090" y="144" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">DATE</text>
+<text x="802" y="162" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="844" y="162" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">NACIONALIDADE</text>
+<text x="1090" y="162" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<rect x="796" y="198" width="300" height="52" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="796" y1="222" x2="1096" y2="222" stroke="#000" stroke-width="1"/>
+<text x="946.0" y="214" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">JOGADOR</text>
+<text x="802" y="236" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="844" y="236" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">ID_JOGADOR</text>
+<text x="1090" y="236" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<rect x="796" y="272" width="300" height="106" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="796" y1="296" x2="1096" y2="296" stroke="#000" stroke-width="1"/>
+<text x="946.0" y="288" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">LIGADO</text>
+<text x="802" y="310" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="844" y="310" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">ID_FUNC</text>
+<text x="1090" y="310" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="802" y="328" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="844" y="328" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">CODIGO_CLUBE</text>
+<text x="1090" y="328" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="802" y="346" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK</text>
+<text x="844" y="346" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">TEMPORADA</text>
+<text x="1090" y="346" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="802" y="364" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK</text>
+<text x="844" y="364" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">FUNCAO</text>
+<text x="1090" y="364" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<rect x="796" y="400" width="300" height="124" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="796" y1="424" x2="1096" y2="424" stroke="#000" stroke-width="1"/>
+<text x="946.0" y="416" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">JOGADOR_PARTICIPA</text>
+<text x="802" y="438" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="844" y="438" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">ID_FUNC</text>
+<text x="1090" y="438" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="802" y="456" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="844" y="456" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">CODIGO_JOGO</text>
+<text x="1090" y="456" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="802" y="474" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="844" y="474" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">N_GOLS</text>
+<text x="1090" y="474" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="802" y="492" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="844" y="492" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">N_ASSIST</text>
+<text x="1090" y="492" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="802" y="510" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="844" y="510" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">POSICAO</text>
+<text x="1090" y="510" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<rect x="796" y="546" width="300" height="106" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="796" y1="570" x2="1096" y2="570" stroke="#000" stroke-width="1"/>
+<text x="946.0" y="562" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">CARTOES</text>
+<text x="802" y="584" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="844" y="584" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">ID_FUNC</text>
+<text x="1090" y="584" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="802" y="602" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="844" y="602" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">COD_JOGO</text>
+<text x="1090" y="602" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="802" y="620" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK</text>
+<text x="844" y="620" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">COR</text>
+<text x="1090" y="620" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(50)</text>
+<text x="802" y="638" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK</text>
+<text x="844" y="638" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">MINUTO</text>
+<text x="1090" y="638" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">TIMESTAMP(6)</text>
+<rect x="1166" y="52" width="300" height="160" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="1166" y1="76" x2="1466" y2="76" stroke="#000" stroke-width="1"/>
+<text x="1316.0" y="68" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">ESTADIO</text>
+<text x="1172" y="90" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="1214" y="90" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">NOME</text>
+<text x="1460" y="90" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<text x="1172" y="108" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK</text>
+<text x="1214" y="108" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">COD_ESTADIO</text>
+<text x="1460" y="108" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="1172" y="126" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="1214" y="126" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">CAPACIDADE</text>
+<text x="1460" y="126" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="1172" y="144" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="1214" y="144" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">END_PAIS</text>
+<text x="1460" y="144" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<text x="1172" y="162" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="1214" y="162" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">END_CIDADE</text>
+<text x="1460" y="162" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<text x="1172" y="180" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="1214" y="180" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">END_CEP</text>
+<text x="1460" y="180" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="1172" y="198" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="1214" y="198" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">END_NUMERO</text>
+<text x="1460" y="198" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<rect x="1166" y="234" width="300" height="160" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="1166" y1="258" x2="1466" y2="258" stroke="#000" stroke-width="1"/>
+<text x="1316.0" y="250" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">JOGO</text>
+<text x="1172" y="272" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK</text>
+<text x="1214" y="272" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">CODIGO</text>
+<text x="1460" y="272" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="1172" y="290" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="1214" y="290" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">DATA_</text>
+<text x="1460" y="290" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">DATE</text>
+<text x="1172" y="308" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="1214" y="308" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">FASE</text>
+<text x="1460" y="308" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<text x="1172" y="326" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">FK</text>
+<text x="1214" y="326" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">ID_ARTIFICIAL</text>
+<text x="1460" y="326" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="1172" y="344" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">FK</text>
+<text x="1214" y="344" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">ID_FED</text>
+<text x="1460" y="344" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="1172" y="362" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">FK</text>
+<text x="1214" y="362" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">CODIGO_VISITANTE</text>
+<text x="1460" y="362" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="1172" y="380" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">FK</text>
+<text x="1214" y="380" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">CODIGO_MANDANTE</text>
+<text x="1460" y="380" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<rect x="1166" y="416" width="300" height="124" fill="#ffffff" stroke="#000" stroke-width="1.1"/>
+<line x1="1166" y1="440" x2="1466" y2="440" stroke="#000" stroke-width="1"/>
+<text x="1316.0" y="432" text-anchor="middle" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12" font-weight="700">TEM</text>
+<text x="1172" y="454" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="1214" y="454" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">COD_ARBITRO</text>
+<text x="1460" y="454" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="1172" y="472" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">PK FK</text>
+<text x="1214" y="472" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11" font-weight="700">COD_JOGO</text>
+<text x="1460" y="472" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="1172" y="490" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="1214" y="490" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">FUNCAO_ARBITRO</text>
+<text x="1460" y="490" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<text x="1172" y="508" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10"></text>
+<text x="1214" y="508" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">PLACAR</text>
+<text x="1460" y="508" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">VARCHAR2(30)</text>
+<text x="1172" y="526" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">FK</text>
+<text x="1214" y="526" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">COD_ESTADIO</text>
+<text x="1460" y="526" text-anchor="end" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="10">NUMBER</text>
+<text x="28" y="882" fill="#000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">Linha cheia: a FK entra na PK. Linha tracejada: FK fora da PK. Dois traços = exatamente um. Círculo e traço = zero ou um. Pé de galinha = muitos. Tipos lidos do dicionário do Oracle.</text>
 </svg>

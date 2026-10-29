@@ -1,232 +1,353 @@
 #!/usr/bin/env python3
-"""Cartões do esquema implementado em SQL/create.sql.
+"""Diagrama relacional no estilo IE (pata de galinha), como uma exportação
+de Oracle SQL Developer Data Modeler: caixa branca, traço preto, PK/FK,
+tipo vindo do dicionário (VARCHAR2, NUMBER, DATE, TIMESTAMP).
 
-Cada chave estrangeira nomeia a tabela referenciada, em vez de uma teia de
-arestas. Os nomes e os tipos são os do DDL.
+Linha cheia: FK faz parte da PK. Linha tracejada: FK fora da PK.
 """
 
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+FONT = "Liberation Sans, Arial, Helvetica, sans-serif"
 
-GROUPS = [
-    ("Instituições e competições", "#e7eef6", [
-        ("FEDERACAO", [
-            ("", "NOME", "VARCHAR(30)", ""),
-            ("PK", "ID_FED", "INT", ""),
-        ]),
-        ("PRESIDENTE_DA_FEDERACAO", [
-            ("", "NOME", "VARCHAR(30)", ""),
-            ("PK", "ID", "INT", ""),
-            ("FK", "ID_FED", "INT", "FEDERACAO"),
-        ]),
-        ("ARBITRO", [
-            ("", "NOME", "VARCHAR(30)", ""),
-            ("PK", "CODIGO", "INT", ""),
-            ("", "DT_NASCIMENTO", "DATE", ""),
-            ("", "NACIONALIDADE", "VARCHAR(30)", ""),
-        ]),
-        ("FAZ_PARTE", [
-            ("PK FK", "CODIGO_ARBITRO", "INT", "ARBITRO"),
-            ("PK FK", "ID_FED", "INT", "FEDERACAO"),
-        ]),
-        ("COMPETICAO", [
-            ("", "NOME", "VARCHAR(30)", ""),
-            ("PK", "ID_ARTIFICIAL", "INT", ""),
-            ("PK FK", "ID_FED", "INT", "FEDERACAO"),
-            ("", "TEMPORADA", "INT", ""),
-        ]),
-        ("GARANTE_VAGA", [
-            ("PK FK", "ID_ARTIFICIAL_MAIOR", "INT", "COMPETICAO"),
-            ("PK FK", "ID_FED_MAIOR", "INT", "COMPETICAO"),
-            ("PK FK", "ID_ARTIFICIAL_MENOR", "INT", "COMPETICAO"),
-            ("PK FK", "ID_FED_MENOR", "INT", "COMPETICAO"),
-        ]),
-    ]),
-    ("Clubes, patrocínio e troféus", "#e7f3ec", [
-        ("CLUBE", [
-            ("", "NOME", "VARCHAR(30)", ""),
-            ("PK", "CODIGO", "INT", ""),
-            ("", "MASCOTE", "VARCHAR(30)", ""),
-            ("", "SEDE", "VARCHAR(30)", ""),
-        ]),
-        ("EMPRESA", [
-            ("UQ", "NOME", "VARCHAR(30)", ""),
-            ("PK", "CNPJ", "INT", ""),
-        ]),
-        ("PAT_CLUBE", [
-            ("PK FK", "CODIGO_CLUBE", "INT", "CLUBE"),
-            ("PK FK", "CNPJ_EMPRESA", "INT", "EMPRESA"),
-            ("PK", "DT_CONTRATO", "DATE", ""),
-            ("", "VALOR", "INT", ""),
-            ("", "DURACAO", "INT", ""),
-        ]),
-        ("PAT_COMP", [
-            ("PK FK", "ID_COMP", "INT", "COMPETICAO"),
-            ("PK FK", "ID_FED", "INT", "COMPETICAO"),
-            ("PK FK", "CNPJ_EMPRESA", "INT", "EMPRESA"),
-            ("PK", "DT_CONTRATO", "DATE", ""),
-            ("", "VALOR", "INT", ""),
-            ("", "DURACAO", "INT", ""),
-        ]),
-        ("TROFEU", [
-            ("PK", "NOME", "VARCHAR(30)", ""),
-            ("", "VALOR", "INT", ""),
-        ]),
-        ("PARTICIPA", [
-            ("PK FK", "CODIGO", "INT", "CLUBE"),
-            ("PK FK", "ID_ARTIFICIAL", "INT", "COMPETICAO"),
-            ("PK FK", "ID_FED", "INT", "COMPETICAO"),
-            ("FK", "NOME_TROFEU", "VARCHAR(30)", "TROFEU"),
-            ("", "COLOCACAO", "VARCHAR(30)", ""),
-        ]),
-    ]),
-    ("Pessoas e elencos", "#f8efe6", [
-        ("FUNCIONARIO", [
-            ("", "NOME", "VARCHAR(30)", ""),
-            ("PK", "ID_FUNC", "INT", ""),
-            ("", "SALARIO", "INT", ""),
-            ("", "DT_NASCIMENTO", "DATE", ""),
-            ("", "NACIONALIDADE", "VARCHAR(30)", ""),
-        ]),
-        ("JOGADOR", [
-            ("PK FK", "ID_JOGADOR", "INT", "FUNCIONARIO"),
-        ]),
-        ("LIGADO", [
-            ("PK FK", "ID_FUNC", "INT", "FUNCIONARIO"),
-            ("PK FK", "CODIGO_CLUBE", "INT", "CLUBE"),
-            ("PK", "TEMPORADA", "INT", ""),
-            ("PK", "FUNCAO", "VARCHAR(30)", ""),
-        ]),
-        ("JOGADOR_PARTICIPA", [
-            ("PK FK", "ID_FUNC", "INT", "FUNCIONARIO"),
-            ("PK FK", "CODIGO_JOGO", "INT", "JOGO"),
-            ("", "N_GOLS", "INT", ""),
-            ("", "N_ASSIST", "INT", ""),
-            ("", "POSICAO", "VARCHAR(30)", ""),
-        ]),
-        ("CARTOES", [
-            ("PK FK", "ID_FUNC", "INT", "JOGADOR_PARTICIPA"),
-            ("PK FK", "COD_JOGO", "INT", "JOGADOR_PARTICIPA"),
-            ("PK", "COR", "VARCHAR(50)", ""),
-            ("PK", "MINUTO", "TIMESTAMP", ""),
-        ]),
-    ]),
-    ("Partidas e estádios", "#eef0f6", [
-        ("ESTADIO", [
-            ("", "NOME", "VARCHAR(30)", ""),
-            ("PK", "COD_ESTADIO", "INT", ""),
-            ("", "CAPACIDADE", "INT", ""),
-            ("", "END_PAIS", "VARCHAR(30)", ""),
-            ("", "END_CIDADE", "VARCHAR(30)", ""),
-            ("", "END_CEP", "INT", ""),
-            ("", "END_NUMERO", "INT", ""),
-        ]),
-        ("JOGO", [
-            ("PK", "CODIGO", "INT", ""),
-            ("", "DATA_", "DATE", ""),
-            ("", "FASE", "VARCHAR(30)", ""),
-            ("FK", "ID_ARTIFICIAL", "INT", "COMPETICAO"),
-            ("FK", "ID_FED", "INT", "COMPETICAO"),
-            ("FK NN", "CODIGO_VISITANTE", "INT", "CLUBE"),
-            ("FK NN", "CODIGO_MANDANTE", "INT", "CLUBE"),
-        ]),
-        ("TEM", [
-            ("PK FK", "COD_ARBITRO", "INT", "ARBITRO"),
-            ("PK FK", "COD_JOGO", "INT", "JOGO"),
-            ("", "FUNCAO_ARBITRO", "VARCHAR(30)", ""),
-            ("", "PLACAR", "VARCHAR(30)", ""),
-            ("FK NN", "COD_ESTADIO", "INT", "ESTADIO"),
-        ]),
-    ]),
+# (nome, [(flag, coluna, tipo)])  flag: PK, FK, PK FK, ""
+TABLES = {
+    "FEDERACAO": [
+        ("", "NOME", "VARCHAR2(30)"),
+        ("PK", "ID_FED", "NUMBER"),
+    ],
+    "PRESIDENTE_DA_FEDERACAO": [
+        ("", "NOME", "VARCHAR2(30)"),
+        ("PK", "ID", "NUMBER"),
+        ("FK", "ID_FED", "NUMBER"),
+    ],
+    "ARBITRO": [
+        ("", "NOME", "VARCHAR2(30)"),
+        ("PK", "CODIGO", "NUMBER"),
+        ("", "DT_NASCIMENTO", "DATE"),
+        ("", "NACIONALIDADE", "VARCHAR2(30)"),
+    ],
+    "FAZ_PARTE": [
+        ("PK FK", "CODIGO_ARBITRO", "NUMBER"),
+        ("PK FK", "ID_FED", "NUMBER"),
+    ],
+    "COMPETICAO": [
+        ("", "NOME", "VARCHAR2(30)"),
+        ("PK", "ID_ARTIFICIAL", "NUMBER"),
+        ("PK FK", "ID_FED", "NUMBER"),
+        ("", "TEMPORADA", "NUMBER"),
+    ],
+    "GARANTE_VAGA": [
+        ("PK FK", "ID_ARTIFICIAL_MAIOR", "NUMBER"),
+        ("PK FK", "ID_FED_MAIOR", "NUMBER"),
+        ("PK FK", "ID_ARTIFICIAL_MENOR", "NUMBER"),
+        ("PK FK", "ID_FED_MENOR", "NUMBER"),
+    ],
+    "EMPRESA": [
+        ("UQ", "NOME", "VARCHAR2(30)"),
+        ("PK", "CNPJ", "NUMBER"),
+    ],
+    "CLUBE": [
+        ("", "NOME", "VARCHAR2(30)"),
+        ("PK", "CODIGO", "NUMBER"),
+        ("", "MASCOTE", "VARCHAR2(30)"),
+        ("", "SEDE", "VARCHAR2(30)"),
+    ],
+    "PAT_CLUBE": [
+        ("PK FK", "CODIGO_CLUBE", "NUMBER"),
+        ("PK FK", "CNPJ_EMPRESA", "NUMBER"),
+        ("PK", "DT_CONTRATO", "DATE"),
+        ("", "VALOR", "NUMBER"),
+        ("", "DURACAO", "NUMBER"),
+    ],
+    "PAT_COMP": [
+        ("PK FK", "ID_COMP", "NUMBER"),
+        ("PK FK", "ID_FED", "NUMBER"),
+        ("PK FK", "CNPJ_EMPRESA", "NUMBER"),
+        ("PK", "DT_CONTRATO", "DATE"),
+        ("", "VALOR", "NUMBER"),
+        ("", "DURACAO", "NUMBER"),
+    ],
+    "TROFEU": [
+        ("PK", "NOME", "VARCHAR2(30)"),
+        ("", "VALOR", "NUMBER"),
+    ],
+    "PARTICIPA": [
+        ("PK FK", "CODIGO", "NUMBER"),
+        ("PK FK", "ID_ARTIFICIAL", "NUMBER"),
+        ("PK FK", "ID_FED", "NUMBER"),
+        ("FK", "NOME_TROFEU", "VARCHAR2(30)"),
+        ("", "COLOCACAO", "VARCHAR2(30)"),
+    ],
+    "FUNCIONARIO": [
+        ("", "NOME", "VARCHAR2(30)"),
+        ("PK", "ID_FUNC", "NUMBER"),
+        ("", "SALARIO", "NUMBER"),
+        ("", "DT_NASCIMENTO", "DATE"),
+        ("", "NACIONALIDADE", "VARCHAR2(30)"),
+    ],
+    "JOGADOR": [
+        ("PK FK", "ID_JOGADOR", "NUMBER"),
+    ],
+    "LIGADO": [
+        ("PK FK", "ID_FUNC", "NUMBER"),
+        ("PK FK", "CODIGO_CLUBE", "NUMBER"),
+        ("PK", "TEMPORADA", "NUMBER"),
+        ("PK", "FUNCAO", "VARCHAR2(30)"),
+    ],
+    "JOGADOR_PARTICIPA": [
+        ("PK FK", "ID_FUNC", "NUMBER"),
+        ("PK FK", "CODIGO_JOGO", "NUMBER"),
+        ("", "N_GOLS", "NUMBER"),
+        ("", "N_ASSIST", "NUMBER"),
+        ("", "POSICAO", "VARCHAR2(30)"),
+    ],
+    "CARTOES": [
+        ("PK FK", "ID_FUNC", "NUMBER"),
+        ("PK FK", "COD_JOGO", "NUMBER"),
+        ("PK", "COR", "VARCHAR2(50)"),
+        ("PK", "MINUTO", "TIMESTAMP(6)"),
+    ],
+    "ESTADIO": [
+        ("", "NOME", "VARCHAR2(30)"),
+        ("PK", "COD_ESTADIO", "NUMBER"),
+        ("", "CAPACIDADE", "NUMBER"),
+        ("", "END_PAIS", "VARCHAR2(30)"),
+        ("", "END_CIDADE", "VARCHAR2(30)"),
+        ("", "END_CEP", "NUMBER"),
+        ("", "END_NUMERO", "NUMBER"),
+    ],
+    "JOGO": [
+        ("PK", "CODIGO", "NUMBER"),
+        ("", "DATA_", "DATE"),
+        ("", "FASE", "VARCHAR2(30)"),
+        ("FK", "ID_ARTIFICIAL", "NUMBER"),
+        ("FK", "ID_FED", "NUMBER"),
+        ("FK", "CODIGO_VISITANTE", "NUMBER"),
+        ("FK", "CODIGO_MANDANTE", "NUMBER"),
+    ],
+    "TEM": [
+        ("PK FK", "COD_ARBITRO", "NUMBER"),
+        ("PK FK", "COD_JOGO", "NUMBER"),
+        ("", "FUNCAO_ARBITRO", "VARCHAR2(30)"),
+        ("", "PLACAR", "VARCHAR2(30)"),
+        ("FK", "COD_ESTADIO", "NUMBER"),
+    ],
+}
+
+# ordem de desenho, por coluna
+COLUMNS = [
+    ["FEDERACAO", "PRESIDENTE_DA_FEDERACAO", "ARBITRO", "FAZ_PARTE", "COMPETICAO", "GARANTE_VAGA"],
+    ["EMPRESA", "CLUBE", "PAT_CLUBE", "PAT_COMP", "TROFEU", "PARTICIPA"],
+    ["FUNCIONARIO", "JOGADOR", "LIGADO", "JOGADOR_PARTICIPA", "CARTOES"],
+    ["ESTADIO", "JOGO", "TEM"],
+]
+
+# (filho, coluna_fk, pai, identificadora, lado_filho, lado_pai, rotulo)
+# identificadora True = linha cheia
+EDGES = [
+    ("PRESIDENTE_DA_FEDERACAO", "ID_FED", "FEDERACAO", False, "right", "right", ""),
+    ("COMPETICAO", "ID_FED", "FEDERACAO", True, "left", "left", ""),
+    ("FAZ_PARTE", "ID_FED", "FEDERACAO", True, "left", "left", ""),
+    ("FAZ_PARTE", "CODIGO_ARBITRO", "ARBITRO", True, "right", "right", ""),
+    ("GARANTE_VAGA", "ID_FED_MAIOR", "COMPETICAO", True, "right", "right", "maior"),
+    ("GARANTE_VAGA", "ID_FED_MENOR", "COMPETICAO", True, "left", "left", "menor"),
+    ("PAT_COMP", "ID_FED", "COMPETICAO", True, "left", "right", ""),
+    ("PAT_COMP", "CNPJ_EMPRESA", "EMPRESA", True, "left", "left", ""),
+    ("PAT_CLUBE", "CNPJ_EMPRESA", "EMPRESA", True, "left", "right", ""),
+    ("PAT_CLUBE", "CODIGO_CLUBE", "CLUBE", True, "right", "right", ""),
+    ("PARTICIPA", "CODIGO", "CLUBE", True, "left", "left", ""),
+    ("PARTICIPA", "ID_FED", "COMPETICAO", True, "left", "right", ""),
+    ("PARTICIPA", "NOME_TROFEU", "TROFEU", False, "right", "right", ""),
+    ("LIGADO", "ID_FUNC", "FUNCIONARIO", True, "left", "left", ""),
+    ("LIGADO", "CODIGO_CLUBE", "CLUBE", True, "left", "right", ""),
+    ("JOGADOR", "ID_JOGADOR", "FUNCIONARIO", True, "right", "right", "1:1"),
+    ("JOGADOR_PARTICIPA", "ID_FUNC", "FUNCIONARIO", True, "left", "right", ""),
+    ("JOGADOR_PARTICIPA", "CODIGO_JOGO", "JOGO", True, "right", "left", ""),
+    ("CARTOES", "ID_FUNC", "JOGADOR_PARTICIPA", True, "right", "right", ""),
+    ("JOGO", "ID_FED", "COMPETICAO", False, "left", "left", ""),
+    ("JOGO", "CODIGO_MANDANTE", "CLUBE", False, "left", "left", "mandante"),
+    ("JOGO", "CODIGO_VISITANTE", "CLUBE", False, "right", "right", "visitante"),
+    ("TEM", "COD_JOGO", "JOGO", True, "left", "right", ""),
+    ("TEM", "COD_ARBITRO", "ARBITRO", True, "left", "right", ""),
+    ("TEM", "COD_ESTADIO", "ESTADIO", False, "right", "right", ""),
 ]
 
 
-def e(text):
-    return str(text).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+def esc(text):
+    return str(text).replace("&", "&amp;").replace("<", "&lt;")
 
 
 def table_height(cols):
-    return 36 + 26 * len(cols) + 8
+    return 26 + 18 * len(cols) + 8
+
+
+def layout():
+    col_w = 300
+    gap_x = 70
+    margin_x = 56
+    y0 = 52
+    gap_y = 22
+    pos = {}
+    max_bottom = y0
+    for i, names in enumerate(COLUMNS):
+        x = margin_x + i * (col_w + gap_x)
+        y = y0
+        for name in names:
+            h = table_height(TABLES[name])
+            pos[name] = (x, y, col_w, h)
+            y += h + gap_y
+        max_bottom = max(max_bottom, y)
+    gutters = [margin_x + i * (col_w + gap_x) - gap_x / 2 for i in range(5)]
+    width = int(gutters[-1] + 36)
+    height = max_bottom + 78
+    return pos, width, height, gutters, max_bottom
+
+
+def col_y(pos, table, column):
+    x, y, w, h = pos[table]
+    cols = TABLES[table]
+    idx = next(i for i, c in enumerate(cols) if c[1] == column)
+    return x, y, w, y + 26 + 8 + idx * 18 + 9
+
+
+def marker(x, y, side, kind):
+    """kind: one | zo | om | zm  (exatamente um, zero ou um, um ou mais, zero ou mais).
+    side: lado da tabela em que o marcador encosta (left/right).
+    """
+    # o traço chega pela direção oposta ao lado
+    sign = 1 if side == "left" else -1  # positivo = para a direita, para dentro da tabela à esquerda
+    # na borda esquerda, os dedos abrem em direção à tabela (para a direita)
+    out = []
+    if kind in ("om", "zm"):
+        heel = x - sign * 12
+        out.append(f'<line x1="{heel}" y1="{y}" x2="{x}" y2="{y-6}" stroke="#000" stroke-width="1"/>')
+        out.append(f'<line x1="{heel}" y1="{y}" x2="{x}" y2="{y}" stroke="#000" stroke-width="1"/>')
+        out.append(f'<line x1="{heel}" y1="{y}" x2="{x}" y2="{y+6}" stroke="#000" stroke-width="1"/>')
+    if kind in ("one", "om"):
+        bx = x - sign * (16 if kind == "om" else 8)
+        out.append(f'<line x1="{bx}" y1="{y-7}" x2="{bx}" y2="{y+7}" stroke="#000" stroke-width="1.2"/>')
+        if kind == "one":
+            bx2 = x - sign * 13
+            out.append(f'<line x1="{bx2}" y1="{y-7}" x2="{bx2}" y2="{y+7}" stroke="#000" stroke-width="1.2"/>')
+    if kind == "zo":
+        bx = x - sign * 8
+        out.append(f'<line x1="{bx}" y1="{y-7}" x2="{bx}" y2="{y+7}" stroke="#000" stroke-width="1.2"/>')
+        cr = x - sign * 16
+        out.append(f'<circle cx="{cr}" cy="{y}" r="4" fill="#fff" stroke="#000" stroke-width="1"/>')
+    if kind == "zm":
+        cr = x - sign * 20
+        out.append(f'<circle cx="{cr}" cy="{y}" r="4" fill="#fff" stroke="#000" stroke-width="1"/>')
+    return "\n".join(out), (x - sign * (24 if kind in ("zm", "zo", "om") else 18))
+
+
+def column_index(name):
+    for i, names in enumerate(COLUMNS):
+        if name in names:
+            return i
+    raise KeyError(name)
 
 
 def build():
-    col_w = 620
-    gap = 22
-    margin = 32
-    width = margin * 2 + col_w * 2 + gap
-    heights = [[table_height(cols) for _name, cols in tables] for _t, _f, tables in GROUPS]
-
-    def stack(hs):
-        return 44 + sum(hs) + 14 * (len(hs) - 1) + 22
-
-    row_h = [max(stack(heights[0]), stack(heights[1])), max(stack(heights[2]), stack(heights[3]))]
-    height = 96 + row_h[0] + gap + row_h[1] + 72
-    origins = [
-        (margin, 96),
-        (margin + col_w + gap, 96),
-        (margin, 96 + row_h[0] + gap),
-        (margin + col_w + gap, 96 + row_h[0] + gap),
-    ]
-    parts = [
+    pos, width, height, gutters, floor = layout()
+    chunks = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
-        f'<rect width="{width}" height="{height}" fill="#f6f3ec"/>',
-        '<text x="32" y="42" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="26" font-weight="700">Esquema relacional implementado</text>',
-        '<text x="32" y="68" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="14">20 tabelas de SQL/create.sql · PK chave primária · FK chave estrangeira · NN NOT NULL · UQ UNIQUE · a seta nomeia a tabela referenciada</text>',
+        f'<rect width="{width}" height="{height}" fill="#ffffff"/>',
+        f'<text x="28" y="28" fill="#000" font-family="{FONT}" font-size="14" font-weight="700">'
+        "Esquema relacional — notação IE (pata de galinha)</text>",
     ]
-    for (title, fill, tables), hs, (x, y0), block_h in zip(GROUPS, heights, origins, [row_h[0], row_h[0], row_h[1], row_h[1]]):
-        parts.append(
-            f'<rect x="{x}" y="{y0}" width="{col_w}" height="{block_h}" rx="16" fill="{fill}" stroke="#d5dde6"/>'
-        )
-        parts.append(
-            f'<text x="{x + 16}" y="{y0 + 28}" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650">{e(title)}</text>'
-        )
-        y = y0 + 46
-        for (name, cols), h in zip(tables, hs):
-            parts.append(
-                f'<rect x="{x + 14}" y="{y}" width="{col_w - 28}" height="{h}" rx="8" fill="#ffffff" stroke="#c5ced6"/>'
+    edge_svg = []
+    lane_use = {}
+    for n, (child, col, parent, ident, _cside, _pside, label) in enumerate(EDGES):
+        c_col = column_index(child)
+        p_col = column_index(parent)
+        cx, _cy, cw, y1 = col_y(pos, child, col)
+        px0, py0, pw, ph = pos[parent]
+        y2 = py0 + 26 + 14
+        if p_col > c_col:
+            cside, pside = "right", "left"
+            x1, x2 = cx + cw, px0
+            g1, g2 = gutters[c_col + 1], gutters[p_col]
+        elif p_col < c_col:
+            cside, pside = "left", "right"
+            x1, x2 = cx, px0 + pw
+            g1, g2 = gutters[c_col], gutters[p_col + 1]
+        else:
+            # mesma coluna: sai pela direita e volta pela direita
+            cside, pside = "right", "right"
+            x1, x2 = cx + cw, px0 + pw
+            g1 = g2 = gutters[c_col + 1]
+        lane_use[g1] = lane_use.get(g1, 0) + 1
+        shift = (lane_use[g1] - 1) * 5 - 4
+        bus1 = g1 + shift
+        bus2 = g2 + shift
+        dash = "" if ident else ' stroke-dasharray="4 3"'
+        if abs(bus1 - bus2) < 2:
+            d = f"M {x1} {y1} L {bus1} {y1} L {bus1} {y2} L {x2} {y2}"
+        else:
+            channel = floor + 10 + (n % 4) * 6
+            d = (
+                f"M {x1} {y1} L {bus1} {y1} L {bus1} {channel} "
+                f"L {bus2} {channel} L {bus2} {y2} L {x2} {y2}"
             )
-            parts.append(f'<rect x="{x + 14}" y="{y}" width="{col_w - 28}" height="30" rx="8" fill="#1e3a5f"/>')
-            parts.append(f'<rect x="{x + 14}" y="{y + 16}" width="{col_w - 28}" height="14" fill="#1e3a5f"/>')
-            parts.append(
-                f'<text x="{x + 26}" y="{y + 20}" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">{e(name)}</text>'
+        edge_svg.append(f'<path d="{d}" fill="none" stroke="#000" stroke-width="1"{dash}/>')
+        child_kind = "zo" if child == "JOGADOR" else "zm"
+        parent_kind = "one"
+        if (child, col) in {
+            ("JOGO", "ID_FED"),
+            ("JOGO", "ID_ARTIFICIAL"),
+            ("PRESIDENTE_DA_FEDERACAO", "ID_FED"),
+            ("PARTICIPA", "NOME_TROFEU"),
+        }:
+            parent_kind = "zo"
+        edge_svg.append(marker(x1, y1, cside, child_kind)[0])
+        edge_svg.append(marker(x2, y2, pside, parent_kind)[0])
+        if label:
+            edge_svg.append(
+                f'<text x="{x1 + (18 if cside=="right" else -18)}" y="{y1 - 6}" '
+                f'text-anchor="{"start" if cside=="right" else "end"}" fill="#000" '
+                f'font-family="{FONT}" font-size="10">{esc(label)}</text>'
             )
-            ry = y + 48
-            for flag, col, typ, target in cols:
-                flag_color = "#8a6232" if flag else "#b0b8c0"
-                parts.append(
-                    f'<text x="{x + 26}" y="{ry}" fill="{flag_color}" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">{e(flag or "·")}</text>'
-                )
-                parts.append(
-                    f'<text x="{x + 84}" y="{ry}" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">{e(col)}</text>'
-                )
-                parts.append(
-                    f'<text x="{x + 300}" y="{ry}" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">{e(typ)}</text>'
-                )
-                if target:
-                    parts.append(
-                        f'<text x="{x + col_w - 26}" y="{ry}" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ {e(target)}</text>'
-                    )
-                ry += 26
-            y += h + 14
-    parts.append(
-        f'<text x="32" y="{height - 40}" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="13">'
-        "JOGADOR_PARTICIPA referencia FUNCIONARIO, não JOGADOR. CARTOES referencia o par (ID_FUNC, COD_JOGO) de JOGADOR_PARTICIPA."
+    chunks.extend(edge_svg)
+    for name, (x, y, w, h) in pos.items():
+        chunks.append(
+            f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="#ffffff" stroke="#000" stroke-width="1.1"/>'
+        )
+        chunks.append(
+            f'<line x1="{x}" y1="{y+24}" x2="{x+w}" y2="{y+24}" stroke="#000" stroke-width="1"/>'
+        )
+        chunks.append(
+            f'<text x="{x+w/2}" y="{y+16}" text-anchor="middle" fill="#000" '
+            f'font-family="{FONT}" font-size="12" font-weight="700">{esc(name)}</text>'
+        )
+        ry = y + 24 + 14
+        for flag, col, typ in TABLES[name]:
+            chunks.append(
+                f'<text x="{x+6}" y="{ry}" fill="#000" font-family="{FONT}" font-size="10">{esc(flag)}</text>'
+            )
+            weight = ' font-weight="700"' if "PK" in flag else ""
+            chunks.append(
+                f'<text x="{x+48}" y="{ry}" fill="#000" font-family="{FONT}" font-size="11"{weight}>{esc(col)}</text>'
+            )
+            chunks.append(
+                f'<text x="{x+w-6}" y="{ry}" text-anchor="end" fill="#000" font-family="{FONT}" font-size="10">{esc(typ)}</text>'
+            )
+            ry += 18
+    chunks.append(
+        f'<text x="28" y="{height-16}" fill="#000" font-family="{FONT}" font-size="11">'
+        "Linha cheia: a FK entra na PK. Linha tracejada: FK fora da PK. "
+        "Dois traços = exatamente um. Círculo e traço = zero ou um. "
+        "Pé de galinha = muitos. Tipos lidos do dicionário do Oracle."
         "</text>"
     )
-    parts.append(
-        f'<text x="32" y="{height - 20}" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="13">'
-        "CODIGO_MANDANTE, CODIGO_VISITANTE e COD_ESTADIO são NOT NULL. NOME de EMPRESA é UNIQUE. ID_FED do presidente não é NOT NULL nem UNIQUE no DDL."
-        "</text>"
-    )
-    parts.append("</svg>")
-    return "\n".join(parts), width
+    chunks.append("</svg>")
+    return "\n".join(chunks)
 
 
 def main():
-    svg, _width = build()
     path = ROOT / "diagrama-logico.svg"
-    path.write_text(svg, encoding="utf-8")
+    path.write_text(build(), encoding="utf-8")
     print(path, path.stat().st_size)
 
 

@@ -1,204 +1,271 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="1360" viewBox="0 0 1680 1360">
-<rect width="1680" height="1360" fill="#f6f3ec"/>
-<text x="48" y="42" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="26" font-weight="700">Mini-Mundo Futebol — esquema conceitual</text>
-<text x="48" y="68" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="14">Gerenciamento de Dados e Informação · CIn-UFPE · o mesmo nome, nos três recortes, é a mesma entidade</text>
-<rect x="32" y="92" width="1616" height="300" rx="18" fill="#eef2f6" stroke="#d5dde6"/>
-<text x="54" y="120" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650">1    Federações, árbitros e competições</text>
-<rect x="52" y="148" width="200" height="84" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
-<rect x="52" y="148" width="200" height="28" rx="8" fill="#1e3a5f"/>
-<rect x="52" y="162" width="200" height="14" fill="#1e3a5f"/>
-<text x="64" y="167" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">PRESIDENTE</text>
-<text x="64" y="196" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">id</text>
-<text x="64" y="214" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome</text>
-<polygon points="348,156 422,190 348,224 274,190" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
-<text x="348" y="194" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">preside</text>
-<rect x="448" y="148" width="210" height="84" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
-<rect x="448" y="148" width="210" height="28" rx="8" fill="#1e3a5f"/>
-<rect x="448" y="162" width="210" height="14" fill="#1e3a5f"/>
-<text x="460" y="167" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">FEDERAÇÃO</text>
-<text x="460" y="196" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">id</text>
-<text x="460" y="214" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome</text>
-<polygon points="748,156 822,190 748,224 674,190" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
-<text x="748" y="194" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">realiza</text>
-<rect x="848" y="140" width="290" height="100" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
-<rect x="848" y="140" width="290" height="28" rx="8" fill="#1e3a5f"/>
-<rect x="848" y="154" width="290" height="14" fill="#1e3a5f"/>
-<text x="860" y="159" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">COMPETIÇÃO</text>
-<text x="860" y="188" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">id da federação + id artificial</text>
-<text x="860" y="206" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome, temporada</text>
-<polygon points="1405,150 1501,190 1405,230 1309,190" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
-<text x="1405" y="187" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">garante vaga</text>
-<text x="1405" y="203" text-anchor="middle" fill="#3d5c4c" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-style="italic">menor × maior</text>
-<polyline points="252,190 274,190" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="422,190 448,190" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="658,190 674,190" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="822,190 848,190" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="1138,170 1309,170" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="1138,210 1309,210" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<text x="258" y="182" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(1,1)</text>
-<text x="428" y="182" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(1,1)</text>
-<text x="680" y="182" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
-<text x="854" y="182" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(1,1)</text>
-<text x="1142" y="162" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">menor (0,N)</text>
-<text x="1142" y="228" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">maior (0,N)</text>
-<rect x="52" y="268" width="240" height="92" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
-<rect x="52" y="268" width="240" height="28" rx="8" fill="#1e3a5f"/>
-<rect x="52" y="282" width="240" height="14" fill="#1e3a5f"/>
-<text x="64" y="287" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">ÁRBITRO</text>
-<text x="64" y="316" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">código</text>
-<text x="64" y="334" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome, nascimento, nacionalidade</text>
-<polygon points="400,282 476,314 400,346 324,314" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
-<text x="400" y="318" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">faz parte</text>
-<polyline points="292,314 324,314" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="476,314 553,314 553,232" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<text x="298" y="306" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
-<text x="490" y="306" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
-<rect x="32" y="412" width="1616" height="400" rx="18" fill="#eef2f6" stroke="#d5dde6"/>
-<text x="54" y="440" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650">2    Clubes, pessoas, patrocínio e troféu</text>
-<rect x="52" y="468" width="250" height="100" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
-<rect x="52" y="468" width="250" height="28" rx="8" fill="#1e3a5f"/>
-<rect x="52" y="482" width="250" height="14" fill="#1e3a5f"/>
-<text x="64" y="487" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">FUNCIONÁRIO</text>
-<text x="64" y="516" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">id</text>
-<text x="64" y="534" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">salário, nome</text>
-<text x="64" y="552" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nascimento, nacionalidade</text>
-<rect x="52" y="640" width="250" height="80" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
-<rect x="52" y="640" width="250" height="28" rx="8" fill="#1e3a5f"/>
-<rect x="52" y="654" width="250" height="14" fill="#1e3a5f"/>
-<text x="64" y="659" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">JOGADOR</text>
-<text x="64" y="688" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">sem atributos próprios</text>
-<text x="64" y="706" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">especialização parcial</text>
-<polyline points="177,568 177,640" fill="none" stroke="#4d6270" stroke-width="1.4" stroke-dasharray="5 4"/>
-<text x="190" y="612" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">pode ser</text>
-<polygon points="378,486 448,518 378,550 308,518" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
-<text x="378" y="515" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">ligado</text>
-<text x="378" y="531" text-anchor="middle" fill="#3d5c4c" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-style="italic">temporada, função</text>
-<rect x="470" y="468" width="210" height="100" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
-<rect x="470" y="468" width="210" height="28" rx="8" fill="#1e3a5f"/>
-<rect x="470" y="482" width="210" height="14" fill="#1e3a5f"/>
-<text x="482" y="487" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">CLUBE</text>
-<text x="482" y="516" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">código</text>
-<text x="482" y="534" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome, mascote, sede</text>
-<polygon points="760,484 834,518 760,552 686,518" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
-<text x="760" y="515" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">participa</text>
-<text x="760" y="531" text-anchor="middle" fill="#3d5c4c" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-style="italic">colocação</text>
-<rect x="860" y="456" width="270" height="116" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
-<rect x="860" y="456" width="270" height="28" rx="8" fill="#1e3a5f"/>
-<rect x="860" y="470" width="270" height="14" fill="#1e3a5f"/>
-<text x="872" y="475" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">COMPETIÇÃO</text>
-<text x="872" y="504" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">id da federação + id artificial</text>
-<text x="872" y="522" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome, temporada</text>
-<polygon points="1230,478 1308,514 1230,550 1152,514" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
-<text x="1230" y="511" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">patrocina</text>
-<text x="1230" y="527" text-anchor="middle" fill="#3d5c4c" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-style="italic">competição</text>
-<rect x="1336" y="468" width="200" height="92" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
-<rect x="1336" y="468" width="200" height="28" rx="8" fill="#1e3a5f"/>
-<rect x="1336" y="482" width="200" height="14" fill="#1e3a5f"/>
-<text x="1348" y="487" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">EMPRESA</text>
-<text x="1348" y="516" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">CNPJ</text>
-<text x="1348" y="534" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome</text>
-<polyline points="302,518 308,518" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="448,518 470,518" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="680,518 686,518" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="834,518 860,518" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="1130,514 1152,514" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="1308,514 1336,514" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<text x="308" y="508" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
-<text x="452" y="508" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
-<text x="690" y="508" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
-<text x="866" y="508" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
-<text x="1136" y="504" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
-<text x="1314" y="504" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
-<polygon points="760,670 830,700 760,730 690,700" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
-<text x="760" y="704" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">recebe</text>
-<rect x="900" y="662" width="180" height="78" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
-<rect x="900" y="662" width="180" height="28" rx="8" fill="#1e3a5f"/>
-<rect x="900" y="676" width="180" height="14" fill="#1e3a5f"/>
-<text x="912" y="681" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">TROFÉU</text>
-<text x="912" y="710" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome</text>
-<text x="912" y="728" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">valor</text>
-<polyline points="760,552 760,670" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="830,700 900,700" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<text x="768" y="630" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,1)</text>
-<text x="848" y="692" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,1)</text>
-<polygon points="1040,728 1118,760 1040,792 962,760" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
-<text x="1040" y="757" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">patrocina</text>
-<text x="1040" y="773" text-anchor="middle" fill="#3d5c4c" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-style="italic">clube</text>
-<polyline points="575,568 575,760 962,760" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="1118,760 1436,760 1436,560" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<text x="588" y="748" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
-<text x="1288" y="748" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
-<rect x="32" y="832" width="1616" height="430" rx="18" fill="#eef2f6" stroke="#d5dde6"/>
-<text x="54" y="860" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650">3    Partidas, estádio e escalação</text>
-<rect x="52" y="900" width="230" height="90" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
-<rect x="52" y="900" width="230" height="28" rx="8" fill="#1e3a5f"/>
-<rect x="52" y="914" width="230" height="14" fill="#1e3a5f"/>
-<text x="64" y="919" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">ÁRBITRO</text>
-<text x="64" y="948" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">código</text>
-<text x="64" y="966" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome, nascimento, nacionalidade</text>
-<rect x="52" y="1060" width="250" height="108" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
-<rect x="52" y="1060" width="250" height="28" rx="8" fill="#1e3a5f"/>
-<rect x="52" y="1074" width="250" height="14" fill="#1e3a5f"/>
-<text x="64" y="1079" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">ESTÁDIO</text>
-<text x="64" y="1108" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">código</text>
-<text x="64" y="1126" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome, capacidade</text>
-<text x="64" y="1144" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">endereço (país, cidade, CEP, nº)</text>
-<polygon points="420,986 500,1024 420,1062 340,1024" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
-<text x="420" y="1021" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">tem</text>
-<text x="420" y="1037" text-anchor="middle" fill="#3d5c4c" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-style="italic">função do árbitro</text>
-<polyline points="282,945 360,945 360,1000 340,1000" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="302,1114 360,1114 360,1048 340,1048" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="500,1024 860,1024 860,990" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<text x="368" y="990" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
-<text x="368" y="1130" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
-<text x="620" y="1014" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">jogo (1,N)</text>
-<rect x="520" y="888" width="220" height="86" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
-<rect x="520" y="888" width="220" height="28" rx="8" fill="#1e3a5f"/>
-<rect x="520" y="902" width="220" height="14" fill="#1e3a5f"/>
-<text x="532" y="907" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">JOGADOR</text>
-<text x="532" y="936" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">especialização parcial</text>
-<polygon points="830,899 902,931 830,963 758,931" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
-<text x="830" y="928" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">joga</text>
-<text x="830" y="944" text-anchor="middle" fill="#3d5c4c" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-style="italic">gols, assist., posição</text>
-<rect x="930" y="868" width="250" height="122" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
-<rect x="930" y="868" width="250" height="28" rx="8" fill="#1e3a5f"/>
-<rect x="930" y="882" width="250" height="14" fill="#1e3a5f"/>
-<text x="942" y="887" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">JOGO</text>
-<text x="942" y="916" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">código</text>
-<text x="942" y="934" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">placar, data, hora, fase</text>
-<polygon points="1288,899 1358,929 1288,959 1218,929" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
-<text x="1288" y="933" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">pertence</text>
-<rect x="1390" y="888" width="210" height="96" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
-<rect x="1390" y="888" width="210" height="28" rx="8" fill="#1e3a5f"/>
-<rect x="1390" y="902" width="210" height="14" fill="#1e3a5f"/>
-<text x="1402" y="907" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">COMPETIÇÃO</text>
-<text x="1402" y="936" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">id composto</text>
-<text x="1402" y="954" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome, temporada</text>
-<polyline points="740,931 758,931" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="902,931 930,931" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="1180,929 1218,929" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="1358,929 1390,929" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<text x="746" y="922" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
-<text x="906" y="922" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
-<text x="1186" y="918" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(1,1)</text>
-<text x="1364" y="918" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(1,N)</text>
-<polygon points="1040,1094 1114,1124 1040,1154 966,1124" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
-<text x="1040" y="1128" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">mandante</text>
-<polygon points="1200,1094 1274,1124 1200,1154 1126,1124" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
-<text x="1200" y="1128" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">visitante</text>
-<rect x="1360" y="1088" width="210" height="88" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
-<rect x="1360" y="1088" width="210" height="28" rx="8" fill="#1e3a5f"/>
-<rect x="1360" y="1102" width="210" height="14" fill="#1e3a5f"/>
-<text x="1372" y="1107" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">CLUBE</text>
-<text x="1372" y="1136" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">código</text>
-<text x="1372" y="1154" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome, mascote, sede</text>
-<polyline points="1055,990 1055,1094" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="1114,1124 1360,1124" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="1055,1008 1160,1008 1160,1094" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<polyline points="1274,1124 1360,1132" fill="none" stroke="#4d6270" stroke-width="1.4"/>
-<text x="1064" y="1060" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(1,1)</text>
-<text x="1280" y="1114" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
-<text x="1168" y="1068" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(1,1)</text>
-<text x="48" y="1296" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="13">(mín, máx) fica ao lado da entidade e conta em quantos vínculos daquele relacionamento ela entra. Cartão é multivalorado em joga: vários por partida, cada um com cor e minuto.</text>
-<text x="48" y="1320" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="13">TEM é ternário (árbitro, jogo e estádio). Presidente e federação são 1:1. Um jogo tem um mandante, um visitante e uma competição.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1860" height="1500" viewBox="0 0 1860 1500">
+<rect width="1860" height="1500" fill="#ffffff"/>
+<text x="36" y="28" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Esquema conceitual — notação de Chen / Elmasri-Navathe</text>
+<rect x="70" y="168" width="150" height="40" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="145.0" y="192.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="700">PRESIDENTE</text>
+<rect x="470" y="168" width="150" height="40" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="545.0" y="192.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="700">FEDERAÇÃO</text>
+<rect x="900" y="168" width="160" height="40" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<rect x="904" y="172" width="152" height="32" fill="none" stroke="#000000" stroke-width="1"/>
+<text x="980.0" y="192.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="700">COMPETIÇÃO</text>
+<rect x="200" y="520" width="140" height="40" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="270.0" y="544.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="700">ÁRBITRO</text>
+<rect x="470" y="520" width="140" height="40" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="540.0" y="544.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="700">EMPRESA</text>
+<rect x="980" y="520" width="130" height="40" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="1045.0" y="544.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="700">CLUBE</text>
+<rect x="70" y="900" width="140" height="40" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="140.0" y="924.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="700">ESTÁDIO</text>
+<rect x="520" y="900" width="120" height="40" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="580.0" y="924.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="700">JOGO</text>
+<rect x="980" y="860" width="170" height="40" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="1065.0" y="884.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="700">FUNCIONÁRIO</text>
+<rect x="1005" y="1180" width="130" height="40" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="1070.0" y="1204.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="700">JOGADOR</text>
+<rect x="1500" y="860" width="130" height="40" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="1565.0" y="884.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="13" font-weight="700">TROFÉU</text>
+<ellipse cx="103.0" cy="140.0" rx="26.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="103.0" y="144.0" text-anchor="middle" fill="#000000" text-decoration="underline" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">id</text>
+<ellipse cx="178.0" cy="140.0" rx="35.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="178.0" y="144.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">nome</text>
+<line x1="114.1" y1="152.7" x2="127.5" y2="168.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="168.7" y1="153.5" x2="158.8" y2="168.0" stroke="#000000" stroke-width="1.15"/>
+<ellipse cx="503.0" cy="140.0" rx="26.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="503.0" y="144.0" text-anchor="middle" fill="#000000" text-decoration="underline" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">id</text>
+<ellipse cx="578.0" cy="140.0" rx="35.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="578.0" y="144.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">nome</text>
+<line x1="514.1" y1="152.7" x2="527.5" y2="168.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="568.7" y1="153.5" x2="558.8" y2="168.0" stroke="#000000" stroke-width="1.15"/>
+<ellipse cx="938.0" cy="98.0" rx="54.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="938.0" y="102.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">id artificial</text>
+<line x1="897.7" y1="105.0" x2="978.3" y2="105.0" stroke="#000000" stroke-width="1" stroke-dasharray="3 2"/>
+<ellipse cx="1041.0" cy="98.0" rx="35.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="1041.0" y="102.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">nome</text>
+<ellipse cx="980.0" cy="140.0" rx="48.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="980.0" y="144.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">temporada</text>
+<line x1="944.5" y1="111.9" x2="970.7" y2="168.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="1031.8" y1="111.5" x2="993.6" y2="168.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="980.0" y1="154.0" x2="980.0" y2="168.0" stroke="#000000" stroke-width="1.15"/>
+<ellipse cx="144.0" cy="489.0" rx="36.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="144.0" y="493.0" text-anchor="middle" fill="#000000" text-decoration="underline" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">código</text>
+<ellipse cx="145.0" cy="523.0" rx="35.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="145.0" y="527.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">nome</text>
+<ellipse cx="137.0" cy="557.0" rx="43.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="137.0" y="561.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">dt. nasc.</text>
+<ellipse cx="124.0" cy="591.0" rx="56.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="124.0" y="595.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">nacionalidade</text>
+<line x1="168.9" y1="499.1" x2="220.6" y2="520.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="178.1" y1="527.5" x2="200.0" y2="530.5" stroke="#000000" stroke-width="1.15"/>
+<line x1="177.0" y1="551.9" x2="200.0" y2="548.9" stroke="#000000" stroke-width="1.15"/>
+<line x1="156.6" y1="579.6" x2="212.7" y2="560.0" stroke="#000000" stroke-width="1.15"/>
+<ellipse cx="498.0" cy="492.0" rx="32.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="498.0" y="496.0" text-anchor="middle" fill="#000000" text-decoration="underline" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">CNPJ</text>
+<ellipse cx="579.0" cy="492.0" rx="35.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="579.0" y="496.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">nome</text>
+<line x1="509.4" y1="505.1" x2="522.5" y2="520.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="568.2" y1="505.3" x2="556.2" y2="520.0" stroke="#000000" stroke-width="1.15"/>
+<ellipse cx="1166.0" cy="489.0" rx="36.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="1166.0" y="493.0" text-anchor="middle" fill="#000000" text-decoration="underline" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">código</text>
+<ellipse cx="1165.0" cy="523.0" rx="35.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="1165.0" y="527.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">nome</text>
+<ellipse cx="1170.0" cy="557.0" rx="40.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="1170.0" y="561.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">mascote</text>
+<ellipse cx="1160.0" cy="591.0" rx="30.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="1160.0" y="595.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">sede</text>
+<line x1="1141.6" y1="499.3" x2="1092.5" y2="520.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="1132.0" y1="527.7" x2="1110.0" y2="530.8" stroke="#000000" stroke-width="1.15"/>
+<line x1="1132.7" y1="551.9" x2="1110.0" y2="548.8" stroke="#000000" stroke-width="1.15"/>
+<line x1="1138.3" y1="581.4" x2="1090.1" y2="560.0" stroke="#000000" stroke-width="1.15"/>
+<ellipse cx="464.0" cy="852.0" rx="36.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="464.0" y="856.0" text-anchor="middle" fill="#000000" text-decoration="underline" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">código</text>
+<ellipse cx="466.0" cy="886.0" rx="34.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="466.0" y="890.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">placar</text>
+<ellipse cx="472.0" cy="920.0" rx="28.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="472.0" y="924.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">data</text>
+<ellipse cx="472.0" cy="954.0" rx="28.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="472.0" y="958.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">hora</text>
+<ellipse cx="472.0" cy="988.0" rx="28.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="472.0" y="992.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">fase</text>
+<line x1="483.9" y1="863.7" x2="545.9" y2="900.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="493.5" y1="894.2" x2="520.0" y2="902.1" stroke="#000000" stroke-width="1.15"/>
+<line x1="500.0" y1="920.0" x2="520.0" y2="920.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="495.7" y1="946.5" x2="520.0" y2="938.9" stroke="#000000" stroke-width="1.15"/>
+<line x1="489.4" y1="977.0" x2="548.2" y2="940.0" stroke="#000000" stroke-width="1.15"/>
+<ellipse cx="1194.0" cy="812.0" rx="24.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="1194.0" y="816.0" text-anchor="middle" fill="#000000" text-decoration="underline" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">id</text>
+<ellipse cx="1204.0" cy="846.0" rx="34.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="1204.0" y="850.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">nome</text>
+<ellipse cx="1206.0" cy="880.0" rx="36.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="1206.0" y="884.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">salário</text>
+<ellipse cx="1213.0" cy="914.0" rx="43.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="1213.0" y="918.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">dt. nasc.</text>
+<ellipse cx="1226.0" cy="948.0" rx="56.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="1226.0" y="952.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">nacionalidade</text>
+<line x1="1176.2" y1="821.4" x2="1102.9" y2="860.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="1174.8" y1="853.2" x2="1146.8" y2="860.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="1170.0" y1="880.0" x2="1150.0" y2="880.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="1177.9" y1="905.9" x2="1150.0" y2="899.5" stroke="#000000" stroke-width="1.15"/>
+<line x1="1197.5" y1="936.0" x2="1112.4" y2="900.0" stroke="#000000" stroke-width="1.15"/>
+<ellipse cx="1526.0" cy="832.0" rx="35.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="1526.0" y="836.0" text-anchor="middle" fill="#000000" text-decoration="underline" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">nome</text>
+<ellipse cx="1607.0" cy="832.0" rx="32.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="1607.0" y="836.0" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">valor</text>
+<line x1="1536.8" y1="845.3" x2="1548.8" y2="860.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="1595.6" y1="845.1" x2="1582.5" y2="860.0" stroke="#000000" stroke-width="1.15"/>
+<ellipse cx="140" cy="1020" rx="48.0" ry="14.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="140" y="1024" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">endereço</text>
+<line x1="140.0" y1="1006.0" x2="140.0" y2="940.0" stroke="#000000" stroke-width="1.15"/>
+<ellipse cx="29.0" cy="1072" rx="28.0" ry="13.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="29.0" y="1076" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">país</text>
+<ellipse cx="101.0" cy="1072" rx="34.0" ry="13.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="101.0" y="1076" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">cidade</text>
+<ellipse cx="171.0" cy="1072" rx="26.0" ry="13.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="171.0" y="1076" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">CEP</text>
+<ellipse cx="243.0" cy="1072" rx="36.0" ry="13.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="243.0" y="1076" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">número</text>
+<line x1="48.7" y1="1062.8" x2="110.1" y2="1034.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="110.4" y1="1059.5" x2="129.5" y2="1034.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="163.6" y1="1059.5" x2="148.3" y2="1034.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="222.1" y1="1061.4" x2="167.7" y2="1034.0" stroke="#000000" stroke-width="1.15"/>
+<polygon points="345,156.0 405.0,188 345,220.0 285.0,188" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="345" y="192" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">preside</text>
+<line x1="220.0" y1="188.0" x2="285.0" y2="188.0" stroke="#000000" stroke-width="1.15"/>
+<text x="236.0" y="196.0" text-anchor="start" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(1,1)</text>
+<line x1="470.0" y1="188.0" x2="405.0" y2="188.0" stroke="#000000" stroke-width="1.15"/>
+<text x="454.0" y="180.0" text-anchor="start" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(1,1)</text>
+<polygon points="760,153.0 825.0,188 760,223.0 695.0,188" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<polygon points="760,166.3 810.7,188 760,209.7 709.3,188" fill="none" stroke="#000000" stroke-width="1"/>
+<text x="760" y="192" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">realiza</text>
+<line x1="620.0" y1="188.0" x2="695.0" y2="188.0" stroke="#000000" stroke-width="1.15"/>
+<text x="636.0" y="196.0" text-anchor="start" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n)</text>
+<line x1="900.0" y1="188.0" x2="825.0" y2="188.0" stroke="#000000" stroke-width="1.15"/>
+<text x="884.0" y="180.0" text-anchor="start" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(1,1)</text>
+<polygon points="1360,152.0 1435.0,188 1360,224.0 1285.0,188" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="1360" y="192" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">garante vaga</text>
+<line x1="1060.0" y1="176.0" x2="1285.0" y2="170.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="1060.0" y1="200.0" x2="1285.0" y2="206.0" stroke="#000000" stroke-width="1.15"/>
+<text x="1120" y="158" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n) menor</text>
+<text x="1120" y="218" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n) maior</text>
+<polygon points="270,368.0 335.0,400 270,432.0 205.0,400" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="270" y="404" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">faz parte</text>
+<line x1="519.1" y1="208.0" x2="295.3" y2="380.5" stroke="#000000" stroke-width="1.15"/>
+<text x="501.5" y="211.4" text-anchor="end" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n)</text>
+<line x1="270.0" y1="520.0" x2="270.0" y2="432.0" stroke="#000000" stroke-width="1.15"/>
+<text x="278.0" y="504.0" text-anchor="start" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n)</text>
+<polygon points="700,368.0 765.0,400 700,432.0 635.0,400" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="700" y="404" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">patrocina</text>
+<line x1="953.6" y1="208.0" x2="725.6" y2="380.6" stroke="#000000" stroke-width="1.15"/>
+<text x="936.0" y="211.3" text-anchor="end" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n)</text>
+<line x1="562.9" y1="520.0" x2="676.6" y2="420.5" stroke="#000000" stroke-width="1.15"/>
+<text x="580.2" y="515.5" text-anchor="start" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n)</text>
+<ellipse cx="600" cy="318" rx="29.0" ry="13.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="600" y="322" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">valor</text>
+<ellipse cx="710" cy="300" rx="56.0" ry="13.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="710" y="304" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">dt. contrato</text>
+<ellipse cx="830" cy="318" rx="39.0" ry="13.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="830" y="322" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">duração</text>
+<line x1="613.9" y1="329.4" x2="675.6" y2="380.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="708.7" y1="313.0" x2="703.0" y2="369.5" stroke="#000000" stroke-width="1.15"/>
+<line x1="811.8" y1="329.5" x2="728.5" y2="382.0" stroke="#000000" stroke-width="1.15"/>
+<polygon points="800,511.0 865.0,540 800,569.0 735.0,540" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="800" y="544" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">patrocina</text>
+<line x1="610.0" y1="540.0" x2="735.0" y2="540.0" stroke="#000000" stroke-width="1.15"/>
+<text x="626.0" y="548.0" text-anchor="start" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n)</text>
+<line x1="980.0" y1="540.0" x2="865.0" y2="540.0" stroke="#000000" stroke-width="1.15"/>
+<text x="964.0" y="532.0" text-anchor="start" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n)</text>
+<ellipse cx="690" cy="470" rx="29.0" ry="13.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="690" y="474" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">valor</text>
+<ellipse cx="800" cy="452" rx="56.0" ry="13.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="800" y="456" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">dt. contrato</text>
+<ellipse cx="920" cy="470" rx="39.0" ry="13.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="920" y="474" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">duração</text>
+<line x1="706.7" y1="480.6" x2="773.2" y2="523.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="800.0" y1="465.0" x2="800.0" y2="511.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="900.7" y1="481.3" x2="828.2" y2="523.6" stroke="#000000" stroke-width="1.15"/>
+<polygon points="1065,673.0 1120.0,700 1065,727.0 1010.0,700" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="1065" y="704" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">ligado</text>
+<line x1="1047.5" y1="560.0" x2="1061.8" y2="674.6" stroke="#000000" stroke-width="1.15"/>
+<text x="1041.5" y="576.9" text-anchor="end" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n)</text>
+<line x1="1065.0" y1="860.0" x2="1065.0" y2="727.0" stroke="#000000" stroke-width="1.15"/>
+<text x="1073.0" y="844.0" text-anchor="start" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n)</text>
+<ellipse cx="1188" cy="668" rx="46.0" ry="13.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="1188" y="672" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">temporada</text>
+<ellipse cx="1196" cy="704" rx="36.0" ry="13.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="1196" y="708" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">função</text>
+<line x1="1154.2" y1="676.8" x2="1100.9" y2="690.6" stroke="#000000" stroke-width="1.15"/>
+<line x1="1160.1" y1="702.9" x2="1116.8" y2="701.6" stroke="#000000" stroke-width="1.15"/>
+<polygon points="1140,368.0 1205.0,400 1140,432.0 1075.0,400" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="1140" y="404" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">participa</text>
+<line x1="995.1" y1="208.0" x2="1122.4" y2="376.7" stroke="#000000" stroke-width="1.15"/>
+<text x="998.3" y="225.6" text-anchor="end" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n)</text>
+<line x1="1058.6" y1="520.0" x2="1123.7" y2="424.0" stroke="#000000" stroke-width="1.15"/>
+<text x="1074.2" y="511.3" text-anchor="start" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n)</text>
+<ellipse cx="1288" cy="400" rx="45.0" ry="13.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="1288" y="404" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">colocação</text>
+<line x1="1243.0" y1="400.0" x2="1205.0" y2="400.0" stroke="#000000" stroke-width="1.15"/>
+<polygon points="1360,731.0 1415.0,760 1360,789.0 1305.0,760" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="1360" y="764" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">recebe</text>
+<line x1="1159.6" y1="432.0" x2="1346.6" y2="738.1" stroke="#000000" stroke-width="1.15"/>
+<text x="1161.1" y="449.8" text-anchor="end" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,1)</text>
+<line x1="1530.8" y1="860.0" x2="1386.1" y2="775.3" stroke="#000000" stroke-width="1.15"/>
+<text x="1521.1" y="845.0" text-anchor="start" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,1)</text>
+<line x1="1065.0" y1="900.0" x2="1065.0" y2="1120.0" stroke="#000000" stroke-width="1.15"/>
+<circle cx="1065" cy="1120" r="13" fill="#ffffff" stroke="#000000" stroke-width="1.15"/>
+<line x1="1065.0" y1="1133.0" x2="1070.0" y2="1180.0" stroke="#000000" stroke-width="1.15"/>
+<text x="1084" y="1124" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">parcial</text>
+<polygon points="760,1054.0 810.0,1080 760,1106.0 710.0,1080" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="760" y="1084" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">joga</text>
+<line x1="1018.3" y1="1180.0" x2="788.7" y2="1091.1" stroke="#000000" stroke-width="1.15"/>
+<text x="1006.3" y="1166.8" text-anchor="start" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n)</text>
+<line x1="602.5" y1="940.0" x2="741.5" y2="1063.6" stroke="#000000" stroke-width="1.15"/>
+<text x="609.1" y="956.6" text-anchor="end" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n)</text>
+<ellipse cx="680" cy="1160" rx="28.0" ry="13.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="680" y="1164" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">gols</text>
+<ellipse cx="750" cy="1178" rx="36.0" ry="13.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="750" y="1182" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">assist.</text>
+<ellipse cx="830" cy="1160" rx="38.0" ry="13.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="830" y="1164" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">posição</text>
+<line x1="691.8" y1="1148.2" x2="742.9" y2="1097.1" stroke="#000000" stroke-width="1.15"/>
+<line x1="751.3" y1="1165.0" x2="757.5" y2="1104.7" stroke="#000000" stroke-width="1.15"/>
+<line x1="819.1" y1="1147.5" x2="775.6" y2="1097.9" stroke="#000000" stroke-width="1.15"/>
+<ellipse cx="900" cy="1168" rx="36.0" ry="15.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<ellipse cx="900" cy="1168" rx="32.0" ry="11.5" fill="none" stroke="#000000" stroke-width="1"/>
+<text x="900" y="1172" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">cartão</text>
+<line x1="880.1" y1="1155.5" x2="782.6" y2="1094.2" stroke="#000000" stroke-width="1.15"/>
+<ellipse cx="860" cy="1220" rx="24.0" ry="12.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="860" y="1224" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">cor</text>
+<ellipse cx="930" cy="1220" rx="34.0" ry="12.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="930" y="1224" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">minuto</text>
+<line x1="868.6" y1="1208.8" x2="888.5" y2="1183.0" stroke="#000000" stroke-width="1.15"/>
+<line x1="923.2" y1="1208.2" x2="908.7" y2="1183.0" stroke="#000000" stroke-width="1.15"/>
+<polygon points="780,874.0 840.0,900 780,926.0 720.0,900" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="780" y="904" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">mandante</text>
+<polygon points="900,954.0 960.0,980 900,1006.0 840.0,980" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="900" y="984" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">visitante</text>
+<line x1="640.0" y1="914.0" x2="731.2" y2="904.9" stroke="#000000" stroke-width="1.15"/>
+<text x="656.7" y="920.4" text-anchor="start" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(1,1)</text>
+<line x1="1030.3" y1="560.0" x2="794.5" y2="880.3" stroke="#000000" stroke-width="1.15"/>
+<text x="1014.4" y="568.1" text-anchor="end" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n)</text>
+<line x1="640.0" y1="931.2" x2="858.1" y2="972.1" stroke="#000000" stroke-width="1.15"/>
+<text x="654.3" y="942.1" text-anchor="end" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(1,1)</text>
+<line x1="1038.4" y1="560.0" x2="907.5" y2="957.2" stroke="#000000" stroke-width="1.15"/>
+<text x="1025.8" y="572.7" text-anchor="end" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n)</text>
+<polygon points="620,734.0 680.0,760 620,786.0 560.0,760" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="620" y="764" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">pertence</text>
+<line x1="585.0" y1="900.0" x2="614.1" y2="783.5" stroke="#000000" stroke-width="1.15"/>
+<text x="596.6" y="886.4" text-anchor="start" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(1,1)</text>
+<line x1="967.4" y1="208.0" x2="632.9" y2="739.6" stroke="#000000" stroke-width="1.15"/>
+<text x="952.1" y="217.3" text-anchor="end" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(1,n)</text>
+<polygon points="300,728.0 350.0,760 300,792.0 250.0,760" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>
+<text x="300" y="764" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">tem</text>
+<line x1="272.7" y1="560.0" x2="296.0" y2="730.6" stroke="#000000" stroke-width="1.15"/>
+<text x="267.0" y="576.9" text-anchor="end" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n)</text>
+<line x1="160.0" y1="900.0" x2="280.5" y2="779.5" stroke="#000000" stroke-width="1.15"/>
+<text x="177.0" y="894.3" text-anchor="start" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(0,n)</text>
+<line x1="545.0" y1="900.0" x2="326.4" y2="775.1" stroke="#000000" stroke-width="1.15"/>
+<text x="535.1" y="885.1" text-anchor="start" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(1,n)</text>
+<ellipse cx="300" cy="700" rx="35.0" ry="13.0" fill="#ffffff" stroke="#000000" stroke-width="1.1"/>
+<text x="300" y="704" text-anchor="middle" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="12">função</text>
+<line x1="300.0" y1="713.0" x2="300.0" y2="728.0" stroke="#000000" stroke-width="1.15"/>
+<text x="36" y="1472" fill="#000000" font-family="Liberation Sans, Arial, Helvetica, sans-serif" font-size="11">(mín, máx) ao lado da entidade. Retângulo duplo e losango duplo: entidade fraca e relacionamento identificador. Elipse dupla: multivalorado. Sublinhado tracejado: chave parcial. Círculo: especialização parcial.</text>
 </svg>

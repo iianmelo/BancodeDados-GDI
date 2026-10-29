@@ -1,256 +1,401 @@
 #!/usr/bin/env python3
-"""Esquema conceitual em três recortes do mesmo mini-mundo.
+"""Esquema conceitual em notação de Chen / Elmasri-Navathe.
 
-(mín, máx) ao lado da entidade = em quantos vínculos daquele relacionamento
-uma ocorrência dela entra. A leitura segue o texto do README e o projeto
-lógico, não as omissões do DDL.
+Retângulos, losangos e elipses, traço preto, fundo branco, fonte sem serifa.
+Cardinalidade (mín, máx) ao lado da entidade.
 """
 
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-W, H = 1680, 1360
+FONT = "Liberation Sans, Arial, Helvetica, sans-serif"
+
+W, H = 1860, 1500
 
 
-def e(text):
-    return str(text).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+def esc(text):
+    return (
+        str(text)
+        .replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+    )
 
 
 parts = []
+boxes = []  # (x, y, w, h, name) for a rough overlap check
 
 
 def add(fragment):
     parts.append(fragment)
 
 
-def panel(x, y, w, h, title):
+def entity(x, y, w, h, name, weak=False):
+    boxes.append((x, y, w, h, name))
     add(
-        f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="18" '
-        'fill="#eef2f6" stroke="#d5dde6"/>'
+        f'<rect x="{x}" y="{y}" width="{w}" height="{h}" fill="#ffffff" '
+        f'stroke="#000000" stroke-width="1.2"/>'
     )
-    add(
-        f'<text x="{x + 22}" y="{y + 28}" fill="#1e3a5f" '
-        'font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650">'
-        f"{e(title)}</text>"
-    )
-
-
-def entity(x, y, w, h, title, lines):
-    add(
-        f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="8" '
-        'fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>'
-    )
-    add(f'<rect x="{x}" y="{y}" width="{w}" height="28" rx="8" fill="#1e3a5f"/>')
-    add(f'<rect x="{x}" y="{y + 14}" width="{w}" height="14" fill="#1e3a5f"/>')
-    add(
-        f'<text x="{x + 12}" y="{y + 19}" fill="#ffffff" '
-        'font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">'
-        f"{e(title)}</text>"
-    )
-    yy = y + 48
-    for line, underline in lines:
-        deco = ' text-decoration="underline"' if underline else ""
+    if weak:
         add(
-            f'<text x="{x + 12}" y="{yy}" fill="#243140"{deco} '
-            'font-family="Inter, DejaVu Sans, sans-serif" font-size="12">'
-            f"{e(line)}</text>"
+            f'<rect x="{x+4}" y="{y+4}" width="{w-8}" height="{h-8}" fill="none" '
+            f'stroke="#000000" stroke-width="1"/>'
         )
-        yy += 18
-
-
-def diamond(cx, cy, rw, rh, title, sub=None):
-    pts = f"{cx},{cy - rh} {cx + rw},{cy} {cx},{cy + rh} {cx - rw},{cy}"
-    add(f'<polygon points="{pts}" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>')
-    dy = -3 if sub else 4
     add(
-        f'<text x="{cx}" y="{cy + dy}" text-anchor="middle" fill="#143024" '
-        'font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">'
-        f"{e(title)}</text>"
+        f'<text x="{x+w/2}" y="{y+h/2+4}" text-anchor="middle" fill="#000000" '
+        f'font-family="{FONT}" font-size="13" font-weight="700">{esc(name)}</text>'
     )
-    if sub:
+    return (x + w / 2, y + h / 2, w, h)
+
+
+def oval(cx, cy, w, h, text, key=False, partial=False, multi=False):
+    x, y = cx - w / 2, cy - h / 2
+    boxes.append((x, y, w, h, text))
+    add(
+        f'<ellipse cx="{cx}" cy="{cy}" rx="{w/2}" ry="{h/2}" fill="#ffffff" '
+        f'stroke="#000000" stroke-width="1.1"/>'
+    )
+    if multi:
         add(
-            f'<text x="{cx}" y="{cy + 13}" text-anchor="middle" fill="#3d5c4c" '
-            'font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-style="italic">'
-            f"{e(sub)}</text>"
+            f'<ellipse cx="{cx}" cy="{cy}" rx="{w/2-4}" ry="{h/2-3.5}" fill="none" '
+            f'stroke="#000000" stroke-width="1"/>'
         )
-
-
-def poly(points, dashed=False):
-    pts = " ".join(f"{x},{y}" for x, y in points)
-    dash = ' stroke-dasharray="5 4"' if dashed else ""
+    deco = ""
+    if key and not partial:
+        deco = ' text-decoration="underline"'
     add(
-        f'<polyline points="{pts}" fill="none" stroke="#4d6270" stroke-width="1.4"{dash}/>'
+        f'<text x="{cx}" y="{cy+4}" text-anchor="middle" fill="#000000"{deco} '
+        f'font-family="{FONT}" font-size="12">{esc(text)}</text>'
+    )
+    if partial:
+        # chave parcial: sublinhado tracejado
+        tw = max(28, len(text) * 6.2)
+        add(
+            f'<line x1="{cx-tw/2}" y1="{cy+7}" x2="{cx+tw/2}" y2="{cy+7}" '
+            f'stroke="#000000" stroke-width="1" stroke-dasharray="3 2"/>'
+        )
+    return (cx, cy, w, h)
+
+
+def diamond(cx, cy, w, h, text, identifying=False):
+    pts = f"{cx},{cy-h/2} {cx+w/2},{cy} {cx},{cy+h/2} {cx-w/2},{cy}"
+    boxes.append((cx - w / 2, cy - h / 2, w, h, text))
+    add(f'<polygon points="{pts}" fill="#ffffff" stroke="#000000" stroke-width="1.2"/>')
+    if identifying:
+        iw, ih = w * 0.78, h * 0.62
+        pts2 = f"{cx},{cy-ih/2} {cx+iw/2},{cy} {cx},{cy+ih/2} {cx-iw/2},{cy}"
+        add(f'<polygon points="{pts2}" fill="none" stroke="#000000" stroke-width="1"/>')
+    add(
+        f'<text x="{cx}" y="{cy+4}" text-anchor="middle" fill="#000000" '
+        f'font-family="{FONT}" font-size="12">{esc(text)}</text>'
+    )
+    return (cx, cy, w, h)
+
+
+def edge_rect(cx, cy, w, h, tx, ty):
+    dx, dy = tx - cx, ty - cy
+    if dx == 0 and dy == 0:
+        return cx, cy
+    sx = (w / 2) / abs(dx) if dx else 1e9
+    sy = (h / 2) / abs(dy) if dy else 1e9
+    t = min(sx, sy)
+    return cx + dx * t, cy + dy * t
+
+
+def edge_diamond(cx, cy, w, h, tx, ty):
+    dx, dy = tx - cx, ty - cy
+    if dx == 0 and dy == 0:
+        return cx, cy
+    denom = abs(dx) / (w / 2) + abs(dy) / (h / 2)
+    t = 1 / denom
+    return cx + dx * t, cy + dy * t
+
+
+def line(x1, y1, x2, y2):
+    add(
+        f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" '
+        f'stroke="#000000" stroke-width="1.15"/>'
     )
 
 
-def label(x, y, text, anchor="start"):
+def card(px, py, text):
     add(
-        f'<text x="{x}" y="{y}" text-anchor="{anchor}" fill="#1e3a5f" '
-        'font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">'
-        f"{e(text)}</text>"
+        f'<text x="{px}" y="{py}" fill="#000000" font-family="{FONT}" '
+        f'font-size="11">{esc(text)}</text>'
     )
+
+
+def connect(ent, dia, label, toward="auto"):
+    ecx, ecy, ew, eh = ent
+    dcx, dcy, dw, dh = dia
+    x1, y1 = edge_rect(ecx, ecy, ew, eh, dcx, dcy)
+    x2, y2 = edge_diamond(dcx, dcy, dw, dh, ecx, ecy)
+    line(x1, y1, x2, y2)
+    # rótulo perto da entidade, deslocado para não sentar no traço
+    vx, vy = x2 - x1, y2 - y1
+    length = (vx * vx + vy * vy) ** 0.5 or 1
+    ux, uy = vx / length, vy / length
+    px, py = -uy, ux
+    lx = x1 + ux * 16 + px * 8
+    ly = y1 + uy * 16 + py * 8
+    anchor = "start" if px >= 0 else "end"
+    add(
+        f'<text x="{lx:.1f}" y="{ly:.1f}" text-anchor="{anchor}" fill="#000000" '
+        f'font-family="{FONT}" font-size="11">{esc(label)}</text>'
+    )
+
+
+def link_oval(shape, target, diamond_target=False):
+    sx, sy, sw, sh = shape
+    tx, ty, tw, th = target
+    if diamond_target:
+        x2, y2 = edge_diamond(tx, ty, tw, th, sx, sy)
+    else:
+        x2, y2 = edge_rect(tx, ty, tw, th, sx, sy)
+    # borda da elipse
+    dx, dy = x2 - sx, y2 - sy
+    if dx == 0 and dy == 0:
+        return
+    # ellipse |dx|/(sw/2) normalized roughly along the ray
+    denom = (dx / (sw / 2)) ** 2 + (dy / (sh / 2)) ** 2
+    t = 1 / (denom ** 0.5)
+    x1, y1 = sx + dx * t, sy + dy * t
+    line(x1, y1, x2, y2)
+
+
+def attrs_column(ent, items, side):
+    ecx, ecy, ew, eh = ent
+    gap_y = 34
+    block = (len(items) - 1) * gap_y
+    cy = ecy - block / 2
+    shapes = []
+    for text, key, partial, multi, w in items:
+        if side == "left":
+            cx = ecx - ew / 2 - 20 - w / 2
+        else:
+            cx = ecx + ew / 2 + 20 + w / 2
+        shapes.append(oval(cx, cy, w, 28, text, key, partial, multi))
+        cy += gap_y
+    for sh in shapes:
+        link_oval(sh, ent, False)
+    return shapes
+
+
+def stack_above(ent, items, cols=3):
+    """items: (text, key, partial, multi, width). Returns oval shapes."""
+    ecx, ecy, ew, eh = ent
+    top = ecy - eh / 2
+    shapes = []
+    rows = [items[i : i + cols] for i in range(0, len(items), cols)]
+    # de baixo para cima, a fileira mais próxima da entidade primeiro na leitura
+    row_h = 42
+    block_h = len(rows) * row_h
+    y0 = top - 28 - (len(rows) - 1) * row_h
+    for r, row in enumerate(rows):
+        total_w = sum(it[4] for it in row) + 14 * (len(row) - 1)
+        x = ecx - total_w / 2
+        cy = y0 + r * row_h
+        for text, key, partial, multi, w in row:
+            cx = x + w / 2
+            shapes.append(oval(cx, cy, w, 28, text, key, partial, multi))
+            x += w + 14
+    for sh in shapes:
+        link_oval(sh, ent, False)
+    return shapes
 
 
 def build():
     parts.clear()
+    boxes.clear()
     add(
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" '
         f'viewBox="0 0 {W} {H}">'
     )
-    add(f'<rect width="{W}" height="{H}" fill="#f6f3ec"/>')
+    add(f'<rect width="{W}" height="{H}" fill="#ffffff"/>')
     add(
-        '<text x="48" y="42" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" '
-        'font-size="26" font-weight="700">Mini-Mundo Futebol — esquema conceitual</text>'
-    )
-    add(
-        '<text x="48" y="68" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" '
-        'font-size="14">Gerenciamento de Dados e Informação · CIn-UFPE · o mesmo nome, nos três recortes, é a mesma entidade</text>'
+        f'<text x="36" y="28" fill="#000000" font-family="{FONT}" font-size="14" '
+        f'font-weight="700">Esquema conceitual — notação de Chen / Elmasri-Navathe</text>'
     )
 
-    # Recorte 1. Entidades ancoradas em y visual, losangos no meio do segmento.
-    panel(32, 92, 1616, 300, "1    Federações, árbitros e competições")
-    entity(52, 148, 200, 84, "PRESIDENTE", [("id", True), ("nome", False)])
-    diamond(348, 190, 74, 34, "preside")
-    entity(448, 148, 210, 84, "FEDERAÇÃO", [("id", True), ("nome", False)])
-    diamond(748, 190, 74, 34, "realiza")
-    entity(848, 140, 290, 100, "COMPETIÇÃO", [
-        ("id da federação + id artificial", True),
-        ("nome, temporada", False),
-    ])
-    diamond(1405, 190, 96, 40, "garante vaga", "menor × maior")
-    poly([(252, 190), (274, 190)])
-    poly([(422, 190), (448, 190)])
-    poly([(658, 190), (674, 190)])
-    poly([(822, 190), (848, 190)])
-    poly([(1138, 170), (1309, 170)])
-    poly([(1138, 210), (1309, 210)])
-    label(258, 182, "(1,1)")
-    label(428, 182, "(1,1)")
-    label(680, 182, "(0,N)")
-    label(854, 182, "(1,1)")
-    label(1142, 162, "menor (0,N)")
-    label(1142, 228, "maior (0,N)")
+    # Entidades. Coordenadas são o canto superior esquerdo.
+    presidente = entity(70, 168, 150, 40, "PRESIDENTE")
+    federacao = entity(470, 168, 150, 40, "FEDERAÇÃO")
+    competicao = entity(900, 168, 160, 40, "COMPETIÇÃO", weak=True)
+    arbitro = entity(200, 520, 140, 40, "ÁRBITRO")
+    empresa = entity(470, 520, 140, 40, "EMPRESA")
+    clube = entity(980, 520, 130, 40, "CLUBE")
+    estadio = entity(70, 900, 140, 40, "ESTÁDIO")
+    jogo = entity(520, 900, 120, 40, "JOGO")
+    funcionario = entity(980, 860, 170, 40, "FUNCIONÁRIO")
+    jogador = entity(1005, 1180, 130, 40, "JOGADOR")
+    trofeu = entity(1500, 860, 130, 40, "TROFÉU")
 
-    entity(52, 268, 240, 92, "ÁRBITRO", [
-        ("código", True),
-        ("nome, nascimento, nacionalidade", False),
-    ])
-    diamond(400, 314, 76, 32, "faz parte")
-    poly([(292, 314), (324, 314)])
-    poly([(476, 314), (553, 314), (553, 232)])
-    label(298, 306, "(0,N)")
-    label(490, 306, "(0,N)")
+    # Atributos
+    stack_above(presidente, [
+        ("id", True, False, False, 52),
+        ("nome", False, False, False, 70),
+    ], cols=2)
+    stack_above(federacao, [
+        ("id", True, False, False, 52),
+        ("nome", False, False, False, 70),
+    ], cols=2)
+    stack_above(competicao, [
+        ("id artificial", False, True, False, 108),
+        ("nome", False, False, False, 70),
+        ("temporada", False, False, False, 96),
+    ], cols=2)
+    attrs_column(arbitro, [
+        ("código", True, False, False, 72),
+        ("nome", False, False, False, 70),
+        ("dt. nasc.", False, False, False, 86),
+        ("nacionalidade", False, False, False, 112),
+    ], "left")
+    stack_above(empresa, [
+        ("CNPJ", True, False, False, 64),
+        ("nome", False, False, False, 70),
+    ], cols=2)
+    attrs_column(clube, [
+        ("código", True, False, False, 72),
+        ("nome", False, False, False, 70),
+        ("mascote", False, False, False, 80),
+        ("sede", False, False, False, 60),
+    ], "right")
+    attrs_column(jogo, [
+        ("código", True, False, False, 72),
+        ("placar", False, False, False, 68),
+        ("data", False, False, False, 56),
+        ("hora", False, False, False, 56),
+        ("fase", False, False, False, 56),
+    ], "left")
+    attrs_column(funcionario, [
+        ("id", True, False, False, 48),
+        ("nome", False, False, False, 68),
+        ("salário", False, False, False, 72),
+        ("dt. nasc.", False, False, False, 86),
+        ("nacionalidade", False, False, False, 112),
+    ], "right")
+    stack_above(trofeu, [
+        ("nome", True, False, False, 70),
+        ("valor", False, False, False, 64),
+    ], cols=2)
 
-    # Recorte 2.
-    panel(32, 412, 1616, 400, "2    Clubes, pessoas, patrocínio e troféu")
-    entity(52, 468, 250, 100, "FUNCIONÁRIO", [
-        ("id", True),
-        ("salário, nome", False),
-        ("nascimento, nacionalidade", False),
-    ])
-    entity(52, 640, 250, 80, "JOGADOR", [
-        ("sem atributos próprios", False),
-        ("especialização parcial", False),
-    ])
-    poly([(177, 568), (177, 640)], dashed=True)
-    label(190, 612, "pode ser")
+    # endereço composto, abaixo do estádio
+    end = oval(140, 1020, 96, 28, "endereço")
+    link_oval(end, estadio, False)
+    kids = []
+    labels = [("país", 56), ("cidade", 68), ("CEP", 52), ("número", 72)]
+    total = sum(w for _, w in labels) + 10 * 3
+    x = 140 - total / 2
+    for text, w in labels:
+        kids.append(oval(x + w / 2, 1072, w, 26, text))
+        x += w + 10
+    for sh in kids:
+        link_oval(sh, end, False)
 
-    diamond(378, 518, 70, 32, "ligado", "temporada, função")
-    entity(470, 468, 210, 100, "CLUBE", [("código", True), ("nome, mascote, sede", False)])
-    diamond(760, 518, 74, 34, "participa", "colocação")
-    entity(860, 456, 270, 116, "COMPETIÇÃO", [
-        ("id da federação + id artificial", True),
-        ("nome, temporada", False),
-    ])
-    diamond(1230, 514, 78, 36, "patrocina", "competição")
-    entity(1336, 468, 200, 92, "EMPRESA", [("CNPJ", True), ("nome", False)])
+    # Relacionamentos
+    preside = diamond(345, 188, 120, 64, "preside")
+    connect(presidente, preside, "(1,1)")
+    connect(federacao, preside, "(1,1)")
 
-    poly([(302, 518), (308, 518)])
-    poly([(448, 518), (470, 518)])
-    poly([(680, 518), (686, 518)])
-    poly([(834, 518), (860, 518)])
-    poly([(1130, 514), (1152, 514)])
-    poly([(1308, 514), (1336, 514)])
-    label(308, 508, "(0,N)")
-    label(452, 508, "(0,N)")
-    label(690, 508, "(0,N)")
-    label(866, 508, "(0,N)")
-    label(1136, 504, "(0,N)")
-    label(1314, 504, "(0,N)")
+    realiza = diamond(760, 188, 130, 70, "realiza", identifying=True)
+    connect(federacao, realiza, "(0,n)")
+    connect(competicao, realiza, "(1,1)")
 
-    diamond(760, 700, 70, 30, "recebe")
-    entity(900, 662, 180, 78, "TROFÉU", [("nome", True), ("valor", False)])
-    poly([(760, 552), (760, 670)])
-    poly([(830, 700), (900, 700)])
-    label(768, 630, "(0,1)")
-    label(848, 692, "(0,1)")
+    garante = diamond(1360, 188, 150, 72, "garante vaga")
+    line(1060, 176, 1285, 170)
+    line(1060, 200, 1285, 206)
+    card(1120, 158, "(0,n) menor")
+    card(1120, 218, "(0,n) maior")
 
-    diamond(1040, 760, 78, 32, "patrocina", "clube")
-    poly([(575, 568), (575, 760), (962, 760)])
-    poly([(1118, 760), (1436, 760), (1436, 560)])
-    label(588, 748, "(0,N)")
-    label(1288, 748, "(0,N)")
+    faz = diamond(270, 400, 130, 64, "faz parte")
+    connect(federacao, faz, "(0,n)")
+    connect(arbitro, faz, "(0,n)")
 
-    # Recorte 3.
-    panel(32, 832, 1616, 430, "3    Partidas, estádio e escalação")
-    entity(52, 900, 230, 90, "ÁRBITRO", [
-        ("código", True),
-        ("nome, nascimento, nacionalidade", False),
-    ])
-    entity(52, 1060, 250, 108, "ESTÁDIO", [
-        ("código", True),
-        ("nome, capacidade", False),
-        ("endereço (país, cidade, CEP, nº)", False),
-    ])
-    diamond(420, 1024, 80, 38, "tem", "função do árbitro")
-    poly([(282, 945), (360, 945), (360, 1000), (340, 1000)])
-    poly([(302, 1114), (360, 1114), (360, 1048), (340, 1048)])
-    poly([(500, 1024), (860, 1024), (860, 990)])
-    label(368, 990, "(0,N)")
-    label(368, 1130, "(0,N)")
-    label(620, 1014, "jogo (1,N)")
+    pat_c = diamond(700, 400, 130, 64, "patrocina")
+    connect(competicao, pat_c, "(0,n)")
+    connect(empresa, pat_c, "(0,n)")
+    for sh in (
+        oval(600, 318, 58, 26, "valor"),
+        oval(710, 300, 112, 26, "dt. contrato"),
+        oval(830, 318, 78, 26, "duração"),
+    ):
+        link_oval(sh, pat_c, True)
 
-    entity(520, 888, 220, 86, "JOGADOR", [("especialização parcial", False)])
-    diamond(830, 931, 72, 32, "joga", "gols, assist., posição")
-    entity(930, 868, 250, 122, "JOGO", [
-        ("código", True),
-        ("placar, data, hora, fase", False),
-    ])
-    diamond(1288, 929, 70, 30, "pertence")
-    entity(1390, 888, 210, 96, "COMPETIÇÃO", [
-        ("id composto", True),
-        ("nome, temporada", False),
-    ])
-    poly([(740, 931), (758, 931)])
-    poly([(902, 931), (930, 931)])
-    poly([(1180, 929), (1218, 929)])
-    poly([(1358, 929), (1390, 929)])
-    label(746, 922, "(0,N)")
-    label(906, 922, "(0,N)")
-    label(1186, 918, "(1,1)")
-    label(1364, 918, "(1,N)")
+    pat_k = diamond(800, 540, 130, 58, "patrocina")
+    connect(empresa, pat_k, "(0,n)")
+    connect(clube, pat_k, "(0,n)")
+    for sh in (
+        oval(690, 470, 58, 26, "valor"),
+        oval(800, 452, 112, 26, "dt. contrato"),
+        oval(920, 470, 78, 26, "duração"),
+    ):
+        link_oval(sh, pat_k, True)
 
-    diamond(1040, 1124, 74, 30, "mandante")
-    diamond(1200, 1124, 74, 30, "visitante")
-    entity(1360, 1088, 210, 88, "CLUBE", [("código", True), ("nome, mascote, sede", False)])
-    poly([(1055, 990), (1055, 1094)])
-    poly([(1114, 1124), (1360, 1124)])
-    poly([(1055, 1008), (1160, 1008), (1160, 1094)])
-    poly([(1274, 1124), (1360, 1132)])
-    label(1064, 1060, "(1,1)")
-    label(1280, 1114, "(0,N)")
-    label(1168, 1068, "(1,1)")
+    ligado = diamond(1065, 700, 110, 54, "ligado")
+    connect(clube, ligado, "(0,n)")
+    connect(funcionario, ligado, "(0,n)")
+    for sh in (
+        oval(1188, 668, 92, 26, "temporada"),
+        oval(1196, 704, 72, 26, "função"),
+    ):
+        link_oval(sh, ligado, True)
+
+    participa = diamond(1140, 400, 130, 64, "participa")
+    connect(competicao, participa, "(0,n)")
+    connect(clube, participa, "(0,n)")
+    col = oval(1288, 400, 90, 26, "colocação")
+    link_oval(col, participa, True)
+
+    recebe = diamond(1360, 760, 110, 58, "recebe")
+    connect(participa, recebe, "(0,1)")
+    connect(trofeu, recebe, "(0,1)")
+
+    # especialização parcial
+    fx, fy, fw, fh = funcionario
+    jx, jy, jw, jh = jogador
+    line(fx, fy + fh / 2, fx, 1120)
+    add('<circle cx="1065" cy="1120" r="13" fill="#ffffff" stroke="#000000" stroke-width="1.15"/>')
+    line(1065, 1133, jx, jy - jh / 2)
+    card(1084, 1124, "parcial")
+
+    joga = diamond(760, 1080, 100, 52, "joga")
+    connect(jogador, joga, "(0,n)")
+    connect(jogo, joga, "(0,n)")
+    for sh in (
+        oval(680, 1160, 56, 26, "gols"),
+        oval(750, 1178, 72, 26, "assist."),
+        oval(830, 1160, 76, 26, "posição"),
+    ):
+        link_oval(sh, joga, True)
+    cartao = oval(900, 1168, 72, 30, "cartão", multi=True)
+    link_oval(cartao, joga, True)
+    cor = oval(860, 1220, 48, 24, "cor")
+    minuto = oval(930, 1220, 68, 24, "minuto")
+    link_oval(cor, cartao, False)
+    link_oval(minuto, cartao, False)
+
+    mandante = diamond(780, 900, 120, 52, "mandante")
+    visitante = diamond(900, 980, 120, 52, "visitante")
+    connect(jogo, mandante, "(1,1)")
+    connect(clube, mandante, "(0,n)")
+    connect(jogo, visitante, "(1,1)")
+    connect(clube, visitante, "(0,n)")
+
+    pertence = diamond(620, 760, 120, 52, "pertence")
+    connect(jogo, pertence, "(1,1)")
+    connect(competicao, pertence, "(1,n)")
+
+    tem = diamond(300, 760, 100, 64, "tem")
+    connect(arbitro, tem, "(0,n)")
+    connect(estadio, tem, "(0,n)")
+    connect(jogo, tem, "(1,n)")
+    funcao = oval(300, 700, 70, 26, "função")
+    link_oval(funcao, tem, True)
 
     add(
-        '<text x="48" y="1296" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="13">'
-        "(mín, máx) fica ao lado da entidade e conta em quantos vínculos daquele relacionamento ela entra. "
-        "Cartão é multivalorado em joga: vários por partida, cada um com cor e minuto."
-        "</text>"
-    )
-    add(
-        '<text x="48" y="1320" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="13">'
-        "TEM é ternário (árbitro, jogo e estádio). Presidente e federação são 1:1. "
-        "Um jogo tem um mandante, um visitante e uma competição."
+        f'<text x="36" y="{H-28}" fill="#000000" font-family="{FONT}" font-size="11">'
+        "(mín, máx) ao lado da entidade. Retângulo duplo e losango duplo: entidade fraca e relacionamento identificador. "
+        "Elipse dupla: multivalorado. Sublinhado tracejado: chave parcial. Círculo: especialização parcial."
         "</text>"
     )
     add("</svg>")
@@ -258,9 +403,20 @@ def build():
 
 
 def main():
+    svg = build()
     path = ROOT / "diagrama-conceitual.svg"
-    path.write_text(build(), encoding="utf-8")
-    print(path, path.stat().st_size)
+    path.write_text(svg, encoding="utf-8")
+    # sobreposição grosseira (caixas-limite)
+    hits = 0
+    for i, a in enumerate(boxes):
+        for b in boxes[i + 1 :]:
+            ax, ay, aw, ah, an = a
+            bx, by, bw, bh, bn = b
+            if ax + aw > bx + 4 and bx + bw > ax + 4 and ay + ah > by + 4 and by + bh > ay + 4:
+                hits += 1
+                if hits <= 25:
+                    print(f"overlap {an!r} / {bn!r}")
+    print(path, "overlaps", hits)
 
 
 if __name__ == "__main__":
