@@ -1,0 +1,141 @@
+===== CONSULTAS E PL/SQL =====
+
+NOME
+------------------------------
+CIMED
+MASTERCARD
+PIXBET
+TEAMVIEWER
+PUMA
+KAPPA
+GAV RESORTS
+ETIHAD AIRWAYS
+UNIMED
+TURKISH AIRLINES
+BETVIP
+SANTANDER
+TIM
+EA
+LAY`S
+UMBRO
+NOVIBET
+HEINEKEN
+SPOTIFY
+STANDARD CHARTERED
+T-MOBILE
+PLAYSTATION
+NIKE
+ESPORTES DA SORTE
+BMG
+BRASILIT
+SUPERMERCADOS BH
+QATAR AIRWAYS
+FEDEX
+CREFISA
+ADIDAS
+BETANO
+CIMENTO NASSAU
+BANRISUL
+JEEP
+
+35 rows selected.
+
+
+NOME
+------------------------------
+EMIRATES
+SPOTIFY
+NIKE
+EA
+
+4 rows selected.
+
+
+NOME			       NOME
+------------------------------ ------------------------------
+SPOTIFY 		       SPORT CLUB DO RECIFE
+NIKE			       SPORT CLUB DO RECIFE
+EMIRATES		       SANTA CRUZ
+EA			       SANTA CRUZ
+
+4 rows selected.
+
+
+CODIGO_CLUBE
+------------
+	   1
+
+1 row selected.
+
+
+NOME
+------------------------------
+Ze da Silva
+Francisco da Limpeza
+
+2 rows selected.
+
+
+no rows selected
+
+
+NOME
+------------------------------
+Neymar
+Messi
+Romarinho
+Ze Roberto
+Caíque França
+
+5 rows selected.
+
+
+NOME			       MEDIA_SALARIO
+------------------------------ -------------
+SPORT CLUB DO RECIFE		      275000
+CHELSEA 			   116666.66
+BARCELONA			      500000
+REAL MADRID			      150000
+PSG				      800000
+SANTOS				      100000
+
+6 rows selected.
+
+
+NOME
+------------------------------
+SPOTIFY
+NIKE
+EMIRATES
+EA
+
+4 rows selected.
+
+
+Trigger created.
+
+
+Trigger created.
+
+
+Procedure created.
+
+Nome do estádio atualizado com sucesso.
+
+PL/SQL procedure successfully completed.
+
+
+Function created.
+
+Soma total dos salários de todos os funcionários: 4431700
+
+PL/SQL procedure successfully completed.
+
+
+Function created.
+
+Quantidade de clubes que comecam com S: 5
+
+PL/SQL procedure successfully completed.
+
+===== FIM =====

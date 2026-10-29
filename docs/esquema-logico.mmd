@@ -1,0 +1,148 @@
+erDiagram
+    %% Gerado a partir de SQL/create.sql. Cardinalidade segue as FKs implementadas.
+    FEDERACAO {
+        VARCHAR_30 NOME
+        INT ID_FED PK
+    }
+    PRESIDENTE_DA_FEDERACAO {
+        VARCHAR_30 NOME
+        INT ID PK
+        INT ID_FED FK
+    }
+    ARBITRO {
+        VARCHAR_30 NOME
+        INT CODIGO PK
+        DATE DT_NASCIMENTO
+        VARCHAR_30 NACIONALIDADE
+    }
+    FAZ_PARTE {
+        INT CODIGO_ARBITRO PK
+        INT ID_FED PK
+    }
+    COMPETICAO {
+        VARCHAR_30 NOME
+        INT ID_ARTIFICIAL PK
+        INT ID_FED PK
+        INT TEMPORADA
+    }
+    GARANTE_VAGA {
+        INT ID_ARTIFICIAL_MAIOR PK
+        INT ID_FED_MAIOR PK
+        INT ID_ARTIFICIAL_MENOR PK
+        INT ID_FED_MENOR PK
+    }
+    ESTADIO {
+        VARCHAR_30 NOME
+        INT COD_ESTADIO PK
+        INT CAPACIDADE
+        VARCHAR_30 END_PAIS
+        VARCHAR_30 END_CIDADE
+        INT END_CEP
+        INT END_NUMERO
+    }
+    JOGO {
+        INT CODIGO PK
+        DATE DATA_
+        VARCHAR_30 FASE
+        INT ID_ARTIFICIAL FK
+        INT ID_FED FK
+        INT CODIGO_VISITANTE FK
+        INT CODIGO_MANDANTE FK
+    }
+    TEM {
+        INT COD_ARBITRO PK
+        INT COD_JOGO PK
+        VARCHAR_30 FUNCAO_ARBITRO
+        VARCHAR_30 PLACAR
+        INT COD_ESTADIO FK
+    }
+    EMPRESA {
+        VARCHAR_30 NOME
+        INT CNPJ PK
+    }
+    CLUBE {
+        VARCHAR_30 NOME
+        INT CODIGO PK
+        VARCHAR_30 MASCOTE
+        VARCHAR_30 SEDE
+    }
+    TROFEU {
+        VARCHAR_30 NOME PK
+        INT VALOR
+    }
+    PAT_CLUBE {
+        INT CODIGO_CLUBE PK
+        INT CNPJ_EMPRESA PK
+        DATE DT_CONTRATO PK
+        INT VALOR
+        INT DURACAO
+    }
+    PAT_COMP {
+        INT ID_COMP PK
+        INT ID_FED PK
+        INT CNPJ_EMPRESA PK
+        DATE DT_CONTRATO PK
+        INT VALOR
+        INT DURACAO
+    }
+    PARTICIPA {
+        INT CODIGO PK
+        INT ID_ARTIFICIAL PK
+        INT ID_FED PK
+        VARCHAR_30 NOME_TROFEU FK
+        VARCHAR_30 COLOCACAO
+    }
+    FUNCIONARIO {
+        VARCHAR_30 NOME
+        INT ID_FUNC PK
+        INT SALARIO
+        DATE DT_NASCIMENTO
+        VARCHAR_30 NACIONALIDADE
+    }
+    JOGADOR {
+        INT ID_JOGADOR PK
+    }
+    LIGADO {
+        INT ID_FUNC PK
+        INT CODIGO_CLUBE PK
+        INT TEMPORADA PK
+        VARCHAR_30 FUNCAO PK
+    }
+    JOGADOR_PARTICIPA {
+        INT ID_FUNC PK
+        INT CODIGO_JOGO PK
+        INT N_GOLS
+        INT N_ASSIST
+        VARCHAR_30 POSICAO
+    }
+    CARTOES {
+        INT ID_FUNC PK
+        INT COD_JOGO PK
+        VARCHAR_50 COR PK
+        TIMESTAMP MINUTO PK
+    }
+    FEDERACAO |o--o{ PRESIDENTE_DA_FEDERACAO : id_fed
+    FEDERACAO ||--o{ COMPETICAO : organiza
+    FEDERACAO ||--o{ FAZ_PARTE : quadro
+    ARBITRO ||--o{ FAZ_PARTE : filia
+    COMPETICAO ||--o{ GARANTE_VAGA : maior
+    COMPETICAO ||--o{ GARANTE_VAGA : menor
+    COMPETICAO |o--o{ JOGO : pertence
+    CLUBE ||--o{ JOGO : mandante
+    CLUBE ||--o{ JOGO : visitante
+    JOGO ||--o{ TEM : apita
+    ARBITRO ||--o{ TEM : atua
+    ESTADIO ||--o{ TEM : sedia
+    COMPETICAO ||--o{ PAT_COMP : patrocinio
+    EMPRESA ||--o{ PAT_COMP : patrocina
+    CLUBE ||--o{ PAT_CLUBE : patrocinio
+    EMPRESA ||--o{ PAT_CLUBE : patrocina
+    CLUBE ||--o{ PARTICIPA : disputa
+    COMPETICAO ||--o{ PARTICIPA : disputa
+    TROFEU |o--o{ PARTICIPA : trofeu
+    FUNCIONARIO ||--o{ LIGADO : vinculo
+    CLUBE ||--o{ LIGADO : vinculo
+    FUNCIONARIO ||--o| JOGADOR : pode_ser
+    FUNCIONARIO ||--o{ JOGADOR_PARTICIPA : atua
+    JOGO ||--o{ JOGADOR_PARTICIPA : escalacao
+    JOGADOR_PARTICIPA ||--o{ CARTOES : cartao
