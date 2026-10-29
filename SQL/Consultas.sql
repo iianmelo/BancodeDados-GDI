@@ -63,7 +63,7 @@ FROM LIGADO L INNER JOIN FUNCIONARIO F
 ON (L.ID_FUNC = F.ID_FUNC) INNER JOIN CLUBE C
 ON (L.CODIGO_CLUBE = C.CODIGO)
 GROUP BY C.NOME
-HAVING AVG(F.SALARIO) > 1000
+HAVING AVG(F.SALARIO) > 1000;
 
 -- CONJUNTOS (ok)
 -- Selecionar todas as empresas que já patrocinaram ou patrocinam um clube ou competicao

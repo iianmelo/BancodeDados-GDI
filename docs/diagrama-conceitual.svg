@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="1360" viewBox="0 0 1680 1360">
+<rect width="1680" height="1360" fill="#f6f3ec"/>
+<text x="48" y="42" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="26" font-weight="700">Mini-Mundo Futebol — esquema conceitual</text>
+<text x="48" y="68" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="14">Gerenciamento de Dados e Informação · CIn-UFPE · o mesmo nome, nos três recortes, é a mesma entidade</text>
+<rect x="32" y="92" width="1616" height="300" rx="18" fill="#eef2f6" stroke="#d5dde6"/>
+<text x="54" y="120" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650">1    Federações, árbitros e competições</text>
+<rect x="52" y="148" width="200" height="84" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
+<rect x="52" y="148" width="200" height="28" rx="8" fill="#1e3a5f"/>
+<rect x="52" y="162" width="200" height="14" fill="#1e3a5f"/>
+<text x="64" y="167" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">PRESIDENTE</text>
+<text x="64" y="196" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">id</text>
+<text x="64" y="214" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome</text>
+<polygon points="348,156 422,190 348,224 274,190" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
+<text x="348" y="194" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">preside</text>
+<rect x="448" y="148" width="210" height="84" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
+<rect x="448" y="148" width="210" height="28" rx="8" fill="#1e3a5f"/>
+<rect x="448" y="162" width="210" height="14" fill="#1e3a5f"/>
+<text x="460" y="167" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">FEDERAÇÃO</text>
+<text x="460" y="196" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">id</text>
+<text x="460" y="214" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome</text>
+<polygon points="748,156 822,190 748,224 674,190" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
+<text x="748" y="194" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">realiza</text>
+<rect x="848" y="140" width="290" height="100" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
+<rect x="848" y="140" width="290" height="28" rx="8" fill="#1e3a5f"/>
+<rect x="848" y="154" width="290" height="14" fill="#1e3a5f"/>
+<text x="860" y="159" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">COMPETIÇÃO</text>
+<text x="860" y="188" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">id da federação + id artificial</text>
+<text x="860" y="206" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome, temporada</text>
+<polygon points="1405,150 1501,190 1405,230 1309,190" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
+<text x="1405" y="187" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">garante vaga</text>
+<text x="1405" y="203" text-anchor="middle" fill="#3d5c4c" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-style="italic">menor × maior</text>
+<polyline points="252,190 274,190" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="422,190 448,190" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="658,190 674,190" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="822,190 848,190" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="1138,170 1309,170" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="1138,210 1309,210" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<text x="258" y="182" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(1,1)</text>
+<text x="428" y="182" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(1,1)</text>
+<text x="680" y="182" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
+<text x="854" y="182" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(1,1)</text>
+<text x="1142" y="162" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">menor (0,N)</text>
+<text x="1142" y="228" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">maior (0,N)</text>
+<rect x="52" y="268" width="240" height="92" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
+<rect x="52" y="268" width="240" height="28" rx="8" fill="#1e3a5f"/>
+<rect x="52" y="282" width="240" height="14" fill="#1e3a5f"/>
+<text x="64" y="287" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">ÁRBITRO</text>
+<text x="64" y="316" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">código</text>
+<text x="64" y="334" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome, nascimento, nacionalidade</text>
+<polygon points="400,282 476,314 400,346 324,314" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
+<text x="400" y="318" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">faz parte</text>
+<polyline points="292,314 324,314" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="476,314 553,314 553,232" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<text x="298" y="306" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
+<text x="490" y="306" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
+<rect x="32" y="412" width="1616" height="400" rx="18" fill="#eef2f6" stroke="#d5dde6"/>
+<text x="54" y="440" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650">2    Clubes, pessoas, patrocínio e troféu</text>
+<rect x="52" y="468" width="250" height="100" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
+<rect x="52" y="468" width="250" height="28" rx="8" fill="#1e3a5f"/>
+<rect x="52" y="482" width="250" height="14" fill="#1e3a5f"/>
+<text x="64" y="487" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">FUNCIONÁRIO</text>
+<text x="64" y="516" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">id</text>
+<text x="64" y="534" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">salário, nome</text>
+<text x="64" y="552" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nascimento, nacionalidade</text>
+<rect x="52" y="640" width="250" height="80" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
+<rect x="52" y="640" width="250" height="28" rx="8" fill="#1e3a5f"/>
+<rect x="52" y="654" width="250" height="14" fill="#1e3a5f"/>
+<text x="64" y="659" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">JOGADOR</text>
+<text x="64" y="688" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">sem atributos próprios</text>
+<text x="64" y="706" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">especialização parcial</text>
+<polyline points="177,568 177,640" fill="none" stroke="#4d6270" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="190" y="612" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">pode ser</text>
+<polygon points="378,486 448,518 378,550 308,518" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
+<text x="378" y="515" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">ligado</text>
+<text x="378" y="531" text-anchor="middle" fill="#3d5c4c" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-style="italic">temporada, função</text>
+<rect x="470" y="468" width="210" height="100" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
+<rect x="470" y="468" width="210" height="28" rx="8" fill="#1e3a5f"/>
+<rect x="470" y="482" width="210" height="14" fill="#1e3a5f"/>
+<text x="482" y="487" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">CLUBE</text>
+<text x="482" y="516" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">código</text>
+<text x="482" y="534" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome, mascote, sede</text>
+<polygon points="760,484 834,518 760,552 686,518" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
+<text x="760" y="515" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">participa</text>
+<text x="760" y="531" text-anchor="middle" fill="#3d5c4c" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-style="italic">colocação</text>
+<rect x="860" y="456" width="270" height="116" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
+<rect x="860" y="456" width="270" height="28" rx="8" fill="#1e3a5f"/>
+<rect x="860" y="470" width="270" height="14" fill="#1e3a5f"/>
+<text x="872" y="475" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">COMPETIÇÃO</text>
+<text x="872" y="504" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">id da federação + id artificial</text>
+<text x="872" y="522" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome, temporada</text>
+<polygon points="1230,478 1308,514 1230,550 1152,514" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
+<text x="1230" y="511" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">patrocina</text>
+<text x="1230" y="527" text-anchor="middle" fill="#3d5c4c" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-style="italic">competição</text>
+<rect x="1336" y="468" width="200" height="92" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
+<rect x="1336" y="468" width="200" height="28" rx="8" fill="#1e3a5f"/>
+<rect x="1336" y="482" width="200" height="14" fill="#1e3a5f"/>
+<text x="1348" y="487" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">EMPRESA</text>
+<text x="1348" y="516" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">CNPJ</text>
+<text x="1348" y="534" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome</text>
+<polyline points="302,518 308,518" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="448,518 470,518" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="680,518 686,518" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="834,518 860,518" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="1130,514 1152,514" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="1308,514 1336,514" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<text x="308" y="508" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
+<text x="452" y="508" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
+<text x="690" y="508" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
+<text x="866" y="508" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
+<text x="1136" y="504" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
+<text x="1314" y="504" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
+<polygon points="760,670 830,700 760,730 690,700" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
+<text x="760" y="704" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">recebe</text>
+<rect x="900" y="662" width="180" height="78" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
+<rect x="900" y="662" width="180" height="28" rx="8" fill="#1e3a5f"/>
+<rect x="900" y="676" width="180" height="14" fill="#1e3a5f"/>
+<text x="912" y="681" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">TROFÉU</text>
+<text x="912" y="710" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome</text>
+<text x="912" y="728" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">valor</text>
+<polyline points="760,552 760,670" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="830,700 900,700" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<text x="768" y="630" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,1)</text>
+<text x="848" y="692" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,1)</text>
+<polygon points="1040,728 1118,760 1040,792 962,760" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
+<text x="1040" y="757" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">patrocina</text>
+<text x="1040" y="773" text-anchor="middle" fill="#3d5c4c" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-style="italic">clube</text>
+<polyline points="575,568 575,760 962,760" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="1118,760 1436,760 1436,560" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<text x="588" y="748" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
+<text x="1288" y="748" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
+<rect x="32" y="832" width="1616" height="430" rx="18" fill="#eef2f6" stroke="#d5dde6"/>
+<text x="54" y="860" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650">3    Partidas, estádio e escalação</text>
+<rect x="52" y="900" width="230" height="90" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
+<rect x="52" y="900" width="230" height="28" rx="8" fill="#1e3a5f"/>
+<rect x="52" y="914" width="230" height="14" fill="#1e3a5f"/>
+<text x="64" y="919" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">ÁRBITRO</text>
+<text x="64" y="948" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">código</text>
+<text x="64" y="966" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome, nascimento, nacionalidade</text>
+<rect x="52" y="1060" width="250" height="108" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
+<rect x="52" y="1060" width="250" height="28" rx="8" fill="#1e3a5f"/>
+<rect x="52" y="1074" width="250" height="14" fill="#1e3a5f"/>
+<text x="64" y="1079" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">ESTÁDIO</text>
+<text x="64" y="1108" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">código</text>
+<text x="64" y="1126" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome, capacidade</text>
+<text x="64" y="1144" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">endereço (país, cidade, CEP, nº)</text>
+<polygon points="420,986 500,1024 420,1062 340,1024" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
+<text x="420" y="1021" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">tem</text>
+<text x="420" y="1037" text-anchor="middle" fill="#3d5c4c" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-style="italic">função do árbitro</text>
+<polyline points="282,945 360,945 360,1000 340,1000" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="302,1114 360,1114 360,1048 340,1048" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="500,1024 860,1024 860,990" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<text x="368" y="990" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
+<text x="368" y="1130" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
+<text x="620" y="1014" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">jogo (1,N)</text>
+<rect x="520" y="888" width="220" height="86" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
+<rect x="520" y="888" width="220" height="28" rx="8" fill="#1e3a5f"/>
+<rect x="520" y="902" width="220" height="14" fill="#1e3a5f"/>
+<text x="532" y="907" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">JOGADOR</text>
+<text x="532" y="936" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">especialização parcial</text>
+<polygon points="830,899 902,931 830,963 758,931" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
+<text x="830" y="928" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">joga</text>
+<text x="830" y="944" text-anchor="middle" fill="#3d5c4c" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-style="italic">gols, assist., posição</text>
+<rect x="930" y="868" width="250" height="122" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
+<rect x="930" y="868" width="250" height="28" rx="8" fill="#1e3a5f"/>
+<rect x="930" y="882" width="250" height="14" fill="#1e3a5f"/>
+<text x="942" y="887" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">JOGO</text>
+<text x="942" y="916" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">código</text>
+<text x="942" y="934" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">placar, data, hora, fase</text>
+<polygon points="1288,899 1358,929 1288,959 1218,929" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
+<text x="1288" y="933" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">pertence</text>
+<rect x="1390" y="888" width="210" height="96" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
+<rect x="1390" y="888" width="210" height="28" rx="8" fill="#1e3a5f"/>
+<rect x="1390" y="902" width="210" height="14" fill="#1e3a5f"/>
+<text x="1402" y="907" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">COMPETIÇÃO</text>
+<text x="1402" y="936" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">id composto</text>
+<text x="1402" y="954" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome, temporada</text>
+<polyline points="740,931 758,931" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="902,931 930,931" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="1180,929 1218,929" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="1358,929 1390,929" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<text x="746" y="922" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
+<text x="906" y="922" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
+<text x="1186" y="918" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(1,1)</text>
+<text x="1364" y="918" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(1,N)</text>
+<polygon points="1040,1094 1114,1124 1040,1154 966,1124" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
+<text x="1040" y="1128" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">mandante</text>
+<polygon points="1200,1094 1274,1124 1200,1154 1126,1124" fill="#e7f3ec" stroke="#1f6b4a" stroke-width="1.3"/>
+<text x="1200" y="1128" text-anchor="middle" fill="#143024" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="650">visitante</text>
+<rect x="1360" y="1088" width="210" height="88" rx="8" fill="#ffffff" stroke="#1e3a5f" stroke-width="1.4"/>
+<rect x="1360" y="1088" width="210" height="28" rx="8" fill="#1e3a5f"/>
+<rect x="1360" y="1102" width="210" height="14" fill="#1e3a5f"/>
+<text x="1372" y="1107" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="650">CLUBE</text>
+<text x="1372" y="1136" fill="#243140" text-decoration="underline" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">código</text>
+<text x="1372" y="1154" fill="#243140" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">nome, mascote, sede</text>
+<polyline points="1055,990 1055,1094" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="1114,1124 1360,1124" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="1055,1008 1160,1008 1160,1094" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<polyline points="1274,1124 1360,1132" fill="none" stroke="#4d6270" stroke-width="1.4"/>
+<text x="1064" y="1060" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(1,1)</text>
+<text x="1280" y="1114" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(0,N)</text>
+<text x="1168" y="1068" text-anchor="start" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600">(1,1)</text>
+<text x="48" y="1296" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="13">(mín, máx) fica ao lado da entidade e conta em quantos vínculos daquele relacionamento ela entra. Cartão é multivalorado em joga: vários por partida, cada um com cor e minuto.</text>
+<text x="48" y="1320" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="13">TEM é ternário (árbitro, jogo e estádio). Presidente e federação são 1:1. Um jogo tem um mandante, um visitante e uma competição.</text>
+</svg>

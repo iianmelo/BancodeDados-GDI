@@ -1,0 +1,369 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1326" height="2050" viewBox="0 0 1326 2050">
+<rect width="1326" height="2050" fill="#f6f3ec"/>
+<text x="32" y="42" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="26" font-weight="700">Esquema relacional implementado</text>
+<text x="32" y="68" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="14">20 tabelas de SQL/create.sql · PK chave primária · FK chave estrangeira · NN NOT NULL · UQ UNIQUE · a seta nomeia a tabela referenciada</text>
+<rect x="32" y="96" width="620" height="1024" rx="16" fill="#e7eef6" stroke="#d5dde6"/>
+<text x="48" y="124" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650">Instituições e competições</text>
+<rect x="46" y="142" width="592" height="96" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="46" y="142" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="46" y="158" width="592" height="14" fill="#1e3a5f"/>
+<text x="58" y="162" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">FEDERACAO</text>
+<text x="58" y="190" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="116" y="190" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME</text>
+<text x="342" y="190" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<text x="58" y="216" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
+<text x="116" y="216" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FED</text>
+<text x="342" y="216" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<rect x="46" y="252" width="592" height="122" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="46" y="252" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="46" y="268" width="592" height="14" fill="#1e3a5f"/>
+<text x="58" y="272" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">PRESIDENTE_DA_FEDERACAO</text>
+<text x="58" y="300" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="116" y="300" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME</text>
+<text x="342" y="300" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<text x="58" y="326" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
+<text x="116" y="326" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID</text>
+<text x="342" y="326" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="58" y="352" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">FK</text>
+<text x="116" y="352" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FED</text>
+<text x="342" y="352" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="626" y="352" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ FEDERACAO</text>
+<rect x="46" y="388" width="592" height="148" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="46" y="388" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="46" y="404" width="592" height="14" fill="#1e3a5f"/>
+<text x="58" y="408" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">ARBITRO</text>
+<text x="58" y="436" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="116" y="436" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME</text>
+<text x="342" y="436" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<text x="58" y="462" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
+<text x="116" y="462" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO</text>
+<text x="342" y="462" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="58" y="488" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="116" y="488" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">DT_NASCIMENTO</text>
+<text x="342" y="488" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">DATE</text>
+<text x="58" y="514" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="116" y="514" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NACIONALIDADE</text>
+<text x="342" y="514" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<rect x="46" y="550" width="592" height="96" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="46" y="550" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="46" y="566" width="592" height="14" fill="#1e3a5f"/>
+<text x="58" y="570" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">FAZ_PARTE</text>
+<text x="58" y="598" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="116" y="598" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO_ARBITRO</text>
+<text x="342" y="598" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="626" y="598" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ ARBITRO</text>
+<text x="58" y="624" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="116" y="624" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FED</text>
+<text x="342" y="624" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="626" y="624" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ FEDERACAO</text>
+<rect x="46" y="660" width="592" height="148" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="46" y="660" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="46" y="676" width="592" height="14" fill="#1e3a5f"/>
+<text x="58" y="680" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">COMPETICAO</text>
+<text x="58" y="708" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="116" y="708" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME</text>
+<text x="342" y="708" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<text x="58" y="734" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
+<text x="116" y="734" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_ARTIFICIAL</text>
+<text x="342" y="734" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="58" y="760" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="116" y="760" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FED</text>
+<text x="342" y="760" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="626" y="760" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ FEDERACAO</text>
+<text x="58" y="786" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="116" y="786" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">TEMPORADA</text>
+<text x="342" y="786" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<rect x="46" y="822" width="592" height="148" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="46" y="822" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="46" y="838" width="592" height="14" fill="#1e3a5f"/>
+<text x="58" y="842" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">GARANTE_VAGA</text>
+<text x="58" y="870" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="116" y="870" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_ARTIFICIAL_MAIOR</text>
+<text x="342" y="870" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="626" y="870" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
+<text x="58" y="896" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="116" y="896" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FED_MAIOR</text>
+<text x="342" y="896" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="626" y="896" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
+<text x="58" y="922" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="116" y="922" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_ARTIFICIAL_MENOR</text>
+<text x="342" y="922" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="626" y="922" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
+<text x="58" y="948" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="116" y="948" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FED_MENOR</text>
+<text x="342" y="948" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="626" y="948" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
+<rect x="674" y="96" width="620" height="1024" rx="16" fill="#e7f3ec" stroke="#d5dde6"/>
+<text x="690" y="124" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650">Clubes, patrocínio e troféus</text>
+<rect x="688" y="142" width="592" height="148" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="688" y="142" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="688" y="158" width="592" height="14" fill="#1e3a5f"/>
+<text x="700" y="162" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">CLUBE</text>
+<text x="700" y="190" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="190" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME</text>
+<text x="984" y="190" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<text x="700" y="216" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
+<text x="758" y="216" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO</text>
+<text x="984" y="216" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="700" y="242" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="242" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">MASCOTE</text>
+<text x="984" y="242" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<text x="700" y="268" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="268" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">SEDE</text>
+<text x="984" y="268" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<rect x="688" y="304" width="592" height="96" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="688" y="304" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="688" y="320" width="592" height="14" fill="#1e3a5f"/>
+<text x="700" y="324" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">EMPRESA</text>
+<text x="700" y="352" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">UQ</text>
+<text x="758" y="352" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME</text>
+<text x="984" y="352" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<text x="700" y="378" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
+<text x="758" y="378" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CNPJ</text>
+<text x="984" y="378" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<rect x="688" y="414" width="592" height="174" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="688" y="414" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="688" y="430" width="592" height="14" fill="#1e3a5f"/>
+<text x="700" y="434" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">PAT_CLUBE</text>
+<text x="700" y="462" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="758" y="462" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO_CLUBE</text>
+<text x="984" y="462" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="1268" y="462" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ CLUBE</text>
+<text x="700" y="488" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="758" y="488" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CNPJ_EMPRESA</text>
+<text x="984" y="488" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="1268" y="488" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ EMPRESA</text>
+<text x="700" y="514" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
+<text x="758" y="514" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">DT_CONTRATO</text>
+<text x="984" y="514" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">DATE</text>
+<text x="700" y="540" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="540" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">VALOR</text>
+<text x="984" y="540" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="700" y="566" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="566" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">DURACAO</text>
+<text x="984" y="566" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<rect x="688" y="602" width="592" height="200" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="688" y="602" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="688" y="618" width="592" height="14" fill="#1e3a5f"/>
+<text x="700" y="622" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">PAT_COMP</text>
+<text x="700" y="650" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="758" y="650" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_COMP</text>
+<text x="984" y="650" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="1268" y="650" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
+<text x="700" y="676" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="758" y="676" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FED</text>
+<text x="984" y="676" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="1268" y="676" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
+<text x="700" y="702" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="758" y="702" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CNPJ_EMPRESA</text>
+<text x="984" y="702" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="1268" y="702" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ EMPRESA</text>
+<text x="700" y="728" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
+<text x="758" y="728" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">DT_CONTRATO</text>
+<text x="984" y="728" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">DATE</text>
+<text x="700" y="754" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="754" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">VALOR</text>
+<text x="984" y="754" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="700" y="780" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="780" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">DURACAO</text>
+<text x="984" y="780" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<rect x="688" y="816" width="592" height="96" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="688" y="816" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="688" y="832" width="592" height="14" fill="#1e3a5f"/>
+<text x="700" y="836" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">TROFEU</text>
+<text x="700" y="864" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
+<text x="758" y="864" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME</text>
+<text x="984" y="864" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<text x="700" y="890" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="890" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">VALOR</text>
+<text x="984" y="890" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<rect x="688" y="926" width="592" height="174" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="688" y="926" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="688" y="942" width="592" height="14" fill="#1e3a5f"/>
+<text x="700" y="946" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">PARTICIPA</text>
+<text x="700" y="974" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="758" y="974" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO</text>
+<text x="984" y="974" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="1268" y="974" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ CLUBE</text>
+<text x="700" y="1000" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="758" y="1000" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_ARTIFICIAL</text>
+<text x="984" y="1000" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="1268" y="1000" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
+<text x="700" y="1026" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="758" y="1026" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FED</text>
+<text x="984" y="1026" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="1268" y="1026" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
+<text x="700" y="1052" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">FK</text>
+<text x="758" y="1052" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME_TROFEU</text>
+<text x="984" y="1052" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<text x="1268" y="1052" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ TROFEU</text>
+<text x="700" y="1078" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="1078" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">COLOCACAO</text>
+<text x="984" y="1078" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<rect x="32" y="1142" width="620" height="836" rx="16" fill="#f8efe6" stroke="#d5dde6"/>
+<text x="48" y="1170" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650">Pessoas e elencos</text>
+<rect x="46" y="1188" width="592" height="174" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="46" y="1188" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="46" y="1204" width="592" height="14" fill="#1e3a5f"/>
+<text x="58" y="1208" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">FUNCIONARIO</text>
+<text x="58" y="1236" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="116" y="1236" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME</text>
+<text x="342" y="1236" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<text x="58" y="1262" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
+<text x="116" y="1262" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FUNC</text>
+<text x="342" y="1262" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="58" y="1288" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="116" y="1288" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">SALARIO</text>
+<text x="342" y="1288" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="58" y="1314" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="116" y="1314" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">DT_NASCIMENTO</text>
+<text x="342" y="1314" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">DATE</text>
+<text x="58" y="1340" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="116" y="1340" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NACIONALIDADE</text>
+<text x="342" y="1340" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<rect x="46" y="1376" width="592" height="70" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="46" y="1376" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="46" y="1392" width="592" height="14" fill="#1e3a5f"/>
+<text x="58" y="1396" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">JOGADOR</text>
+<text x="58" y="1424" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="116" y="1424" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_JOGADOR</text>
+<text x="342" y="1424" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="626" y="1424" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ FUNCIONARIO</text>
+<rect x="46" y="1460" width="592" height="148" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="46" y="1460" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="46" y="1476" width="592" height="14" fill="#1e3a5f"/>
+<text x="58" y="1480" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">LIGADO</text>
+<text x="58" y="1508" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="116" y="1508" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FUNC</text>
+<text x="342" y="1508" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="626" y="1508" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ FUNCIONARIO</text>
+<text x="58" y="1534" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="116" y="1534" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO_CLUBE</text>
+<text x="342" y="1534" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="626" y="1534" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ CLUBE</text>
+<text x="58" y="1560" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
+<text x="116" y="1560" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">TEMPORADA</text>
+<text x="342" y="1560" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="58" y="1586" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
+<text x="116" y="1586" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">FUNCAO</text>
+<text x="342" y="1586" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<rect x="46" y="1622" width="592" height="174" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="46" y="1622" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="46" y="1638" width="592" height="14" fill="#1e3a5f"/>
+<text x="58" y="1642" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">JOGADOR_PARTICIPA</text>
+<text x="58" y="1670" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="116" y="1670" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FUNC</text>
+<text x="342" y="1670" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="626" y="1670" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ FUNCIONARIO</text>
+<text x="58" y="1696" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="116" y="1696" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO_JOGO</text>
+<text x="342" y="1696" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="626" y="1696" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ JOGO</text>
+<text x="58" y="1722" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="116" y="1722" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">N_GOLS</text>
+<text x="342" y="1722" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="58" y="1748" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="116" y="1748" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">N_ASSIST</text>
+<text x="342" y="1748" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="58" y="1774" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="116" y="1774" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">POSICAO</text>
+<text x="342" y="1774" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<rect x="46" y="1810" width="592" height="148" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="46" y="1810" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="46" y="1826" width="592" height="14" fill="#1e3a5f"/>
+<text x="58" y="1830" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">CARTOES</text>
+<text x="58" y="1858" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="116" y="1858" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FUNC</text>
+<text x="342" y="1858" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="626" y="1858" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ JOGADOR_PARTICIPA</text>
+<text x="58" y="1884" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="116" y="1884" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">COD_JOGO</text>
+<text x="342" y="1884" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="626" y="1884" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ JOGADOR_PARTICIPA</text>
+<text x="58" y="1910" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
+<text x="116" y="1910" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">COR</text>
+<text x="342" y="1910" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(50)</text>
+<text x="58" y="1936" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
+<text x="116" y="1936" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">MINUTO</text>
+<text x="342" y="1936" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">TIMESTAMP</text>
+<rect x="674" y="1142" width="620" height="836" rx="16" fill="#eef0f6" stroke="#d5dde6"/>
+<text x="690" y="1170" fill="#1e3a5f" font-family="Inter, DejaVu Sans, sans-serif" font-size="15" font-weight="650">Partidas e estádios</text>
+<rect x="688" y="1188" width="592" height="226" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="688" y="1188" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="688" y="1204" width="592" height="14" fill="#1e3a5f"/>
+<text x="700" y="1208" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">ESTADIO</text>
+<text x="700" y="1236" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="1236" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">NOME</text>
+<text x="984" y="1236" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<text x="700" y="1262" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
+<text x="758" y="1262" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">COD_ESTADIO</text>
+<text x="984" y="1262" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="700" y="1288" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="1288" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CAPACIDADE</text>
+<text x="984" y="1288" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="700" y="1314" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="1314" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">END_PAIS</text>
+<text x="984" y="1314" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<text x="700" y="1340" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="1340" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">END_CIDADE</text>
+<text x="984" y="1340" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<text x="700" y="1366" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="1366" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">END_CEP</text>
+<text x="984" y="1366" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="700" y="1392" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="1392" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">END_NUMERO</text>
+<text x="984" y="1392" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<rect x="688" y="1428" width="592" height="226" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="688" y="1428" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="688" y="1444" width="592" height="14" fill="#1e3a5f"/>
+<text x="700" y="1448" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">JOGO</text>
+<text x="700" y="1476" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK</text>
+<text x="758" y="1476" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO</text>
+<text x="984" y="1476" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="700" y="1502" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="1502" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">DATA_</text>
+<text x="984" y="1502" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">DATE</text>
+<text x="700" y="1528" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="1528" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">FASE</text>
+<text x="984" y="1528" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<text x="700" y="1554" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">FK</text>
+<text x="758" y="1554" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_ARTIFICIAL</text>
+<text x="984" y="1554" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="1268" y="1554" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
+<text x="700" y="1580" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">FK</text>
+<text x="758" y="1580" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">ID_FED</text>
+<text x="984" y="1580" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="1268" y="1580" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ COMPETICAO</text>
+<text x="700" y="1606" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">FK NN</text>
+<text x="758" y="1606" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO_VISITANTE</text>
+<text x="984" y="1606" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="1268" y="1606" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ CLUBE</text>
+<text x="700" y="1632" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">FK NN</text>
+<text x="758" y="1632" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">CODIGO_MANDANTE</text>
+<text x="984" y="1632" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="1268" y="1632" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ CLUBE</text>
+<rect x="688" y="1668" width="592" height="174" rx="8" fill="#ffffff" stroke="#c5ced6"/>
+<rect x="688" y="1668" width="592" height="30" rx="8" fill="#1e3a5f"/>
+<rect x="688" y="1684" width="592" height="14" fill="#1e3a5f"/>
+<text x="700" y="1688" fill="#ffffff" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="700">TEM</text>
+<text x="700" y="1716" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="758" y="1716" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">COD_ARBITRO</text>
+<text x="984" y="1716" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="1268" y="1716" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ ARBITRO</text>
+<text x="700" y="1742" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">PK FK</text>
+<text x="758" y="1742" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">COD_JOGO</text>
+<text x="984" y="1742" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="1268" y="1742" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ JOGO</text>
+<text x="700" y="1768" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="1768" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">FUNCAO_ARBITRO</text>
+<text x="984" y="1768" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<text x="700" y="1794" fill="#b0b8c0" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">·</text>
+<text x="758" y="1794" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">PLACAR</text>
+<text x="984" y="1794" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">VARCHAR(30)</text>
+<text x="700" y="1820" fill="#8a6232" font-family="Inter, DejaVu Sans, sans-serif" font-size="10" font-weight="700">FK NN</text>
+<text x="758" y="1820" fill="#243140" font-family="JetBrains Mono, DejaVu Sans Mono, monospace" font-size="12">COD_ESTADIO</text>
+<text x="984" y="1820" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12">INT</text>
+<text x="1268" y="1820" text-anchor="end" fill="#1f6b4a" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="600">→ ESTADIO</text>
+<text x="32" y="2010" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="13">JOGADOR_PARTICIPA referencia FUNCIONARIO, não JOGADOR. CARTOES referencia o par (ID_FUNC, COD_JOGO) de JOGADOR_PARTICIPA.</text>
+<text x="32" y="2030" fill="#5c6b7a" font-family="Inter, DejaVu Sans, sans-serif" font-size="13">CODIGO_MANDANTE, CODIGO_VISITANTE e COD_ESTADIO são NOT NULL. NOME de EMPRESA é UNIQUE. ID_FED do presidente não é NOT NULL nem UNIQUE no DDL.</text>
+</svg>
